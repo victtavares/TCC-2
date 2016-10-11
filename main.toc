@@ -1,0 +1,22 @@
+\select@language {brazil}
+\contentsline {chapter}{Lista de Figuras}{xv}{chapter*.4}
+\contentsline {chapter}{Lista de Tabelas}{xvii}{chapter*.5}
+\contentsline {chapter}{Lista de Acr\IeC {\^o}nimos}{xix}{chapter*.6}
+\contentsline {chapter}{Lista de C\IeC {\'o}digos Fonte}{xxi}{chapter*.7}
+\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Sistemas de Detec\IeC {\c c}\IeC {\~a}o de Quedas}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Defini\IeC {\c c}\IeC {\~a}o de Queda}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Tipos de Sistemas de Detec\IeC {\c c}\IeC {\~a}o de Queda}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3}Sensores}{7}{section.2.3}
+\contentsline {section}{\numberline {2.4}Exemplos de Sistemas de Detec\IeC {\c c}\IeC {\~a}o de Queda}{7}{section.2.4}
+\contentsline {section}{\numberline {2.5}T\IeC {\'e}cnicas de Recomenda\IeC {\c c}\IeC {\~a}o}{7}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Filtragem Colaborativa}{8}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Filtragem Baseada em Conte\IeC {\'u}do}{9}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Arquitetura de Sistemas de Recomenda\IeC {\c c}\IeC {\~a}o Baseados em Conte\IeC {\'u}do}{10}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Compara\IeC {\c c}\IeC {\~a}o das T\IeC {\'e}cnicas de Recomenda\IeC {\c c}\IeC {\~a}o}{11}{subsection.2.5.4}
+\contentsline {section}{\numberline {2.6}Aplica\IeC {\c c}\IeC {\~o}es de Sistemas de Recomenda\IeC {\c c}\IeC {\~a}o}{12}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}TiVo}{12}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Biblioteca Digital}{13}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}Amazon}{14}{subsection.2.6.3}
+\contentsline {section}{\numberline {2.7}Sum\IeC {\'a}rio}{15}{section.2.7}
+\contentsline {chapter}{Refer\IeC {\^e}ncias Bibliogr\IeC {\'a}ficas}{16}{section.2.7}

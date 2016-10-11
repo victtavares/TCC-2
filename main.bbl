@@ -1,0 +1,71 @@
+\begin{thebibliography}{}
+
+\bibitem[Gartner(2015)Gartner]{smartphoneSales:15}
+Gartner (2015).
+\newblock Gartner says smartphone sales surpassed one billion units in 2014.
+\newblock \url{http://www.gartner.com/newsroom/id/2996817/}.
+\newblock Accessado em 22 de Abril de 2016.
+
+\bibitem[He {\em et~al.}(2012)He, Li, and Bao]{FallDectionSmartPhone:12}
+He, Y., Li, Y., and Bao, S.-D. (2012).
+\newblock Fall detection by built-in tri-accelerometer of smartphone.
+\newblock {\em Proceedings of 2012 IEEE-EMBS International Conference on
+  Biomedical and Health Informatics\/}, {\bf 25}, 184--187.
+
+\bibitem[Hsieh {\em et~al.}(2014)Hsieh, Chen, Wu, and Yue]{hsieh2014wrist}
+Hsieh, S.-L., Chen, C.-C., Wu, S.-H., and Yue, T.-W. (2014).
+\newblock A wrist-worn fall detection system using accelerometers and
+  gyroscopes.
+\newblock In {\em Networking, Sensing and Control (ICNSC), 2014 IEEE 11th
+  International Conference on\/}, pages 518--523. IEEE.
+
+\bibitem[IBGE(2012)IBGE]{PNAD:12}
+IBGE (2012).
+\newblock Número de idosos que moram sozinhos triplica em 20 anos.
+\newblock
+  \url{http://www.ibge.gov.br/home/estatistica/populacao/trabalhoerendimento/pnad2012/default_sintese.shtm}.
+\newblock Accessado em 21 de Abril de 2016.
+
+\bibitem[{IBGE}(2016){IBGE}]{ibgePopulation:16}
+{IBGE} (2016).
+\newblock Projeção da população do brasil e das unidades da federação.
+\newblock \url{http://www.ibge.gov.br/apps/populacao/projecao/}.
+\newblock Accessado em 21 de Abril de 2016.
+
+\bibitem[Igual {\em et~al.}(2013)Igual, Medrano, and
+  Plaza]{igual2013challenges}
+Igual, R., Medrano, C., and Plaza, I. (2013).
+\newblock Challenges, issues and trends in fall detection systems.
+\newblock {\em Biomedical engineering online\/}, {\bf 12}(1), 1.
+
+\bibitem[Legters(2002)Legters]{legters2002fear}
+Legters, K. (2002).
+\newblock Fear of falling.
+\newblock {\em Physical therapy\/}, {\bf 82}(3), 264--272.
+
+\bibitem[Mehner {\em et~al.}(2013)Mehner, Klauck, and
+  Koenig]{mehner2013location}
+Mehner, S., Klauck, R., and Koenig, H. (2013).
+\newblock Location-independent fall detection with smartphone.
+\newblock In {\em Proceedings of the 6th International Conference on PErvasive
+  Technologies Related to Assistive Environments\/}, page~11. ACM.
+
+\bibitem[{Portal Brasil}(2012){Portal Brasil}]{portalBrasilQuedas:12}
+{Portal Brasil} (2012).
+\newblock Quedas.
+\newblock \url{http://www.brasil.gov.br/saude/2012/04/quedas/}.
+\newblock Accessado em 21 de Abril de 2016.
+
+\bibitem[Samsung(2016)Samsung]{samsungSpecification:16}
+Samsung (2016).
+\newblock Gear s2.
+\newblock \url{http://www.samsung.com/global/galaxy/gear-s2/#!/spec/}.
+\newblock Accessado em 22 de Abril de 2016.
+
+\bibitem[{United Nations}(2013){United Nations}]{unPopulation:13}
+{United Nations} (2013).
+\newblock World population ageing 2013.
+\newblock Report, The Department of Economic and Social Affairs of the United
+  Nations.
+
+\end{thebibliography}
