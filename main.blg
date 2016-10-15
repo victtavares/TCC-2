@@ -3,61 +3,52 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 A level-1 auxiliary file: chapters/introduction/introduction.aux
 A level-1 auxiliary file: chapters/fall_systems/fall_systems.aux
+A level-1 auxiliary file: chapters/wearable/wearable.aux
 The style file: natbib.bst
 Database file #1: references.bib
-Warning--I didn't find a database entry for "Burke:2007:HWR:1768197.1768211"
-Warning--I didn't find a database entry for "lops2011ContentBased"
-Warning--I didn't find a database entry for "TiVoSuggestion"
-Warning--I didn't find a database entry for "ricci2011recommender"
-Warning--I didn't find a database entry for "Herlocker:2004:ECF:963770.963772"
-Warning--I didn't find a database entry for "Burke:2002:HRS:586321.586352"
-Warning--I didn't find a database entry for "Mladenic:1999:TRI:630307.630472"
-Warning--I didn't find a database entry for "claypool99"
-Warning--I didn't find a database entry for "goldberg1992tapestry"
-Warning--I didn't find a database entry for "Resnick:1997:RS:245108.245121"
-Warning--I didn't find a database entry for "Ali:2004:TMS:1014052.1014097"
-Warning--I didn't find a database entry for "Porcel:2010:DII:1663649.1663728"
-Warning--I didn't find a database entry for "rendaIPM05"
-Warning--I didn't find a database entry for "Schafer:1999:RSE:336992.337035"
-You've used 11 entries,
+Repeated entry---line 319 of file references.bib
+ : @article{mubashir2013survey
+ :                            ,
+I'm skipping whatever remains of this entry
+You've used 32 entries,
             2378 wiz_defined-function locations,
-            623 strings with 6659 characters,
-and the built_in function-call counts, 4430 in all, are:
-= -- 470
-> -- 195
-< -- 9
-+ -- 57
-- -- 55
-* -- 331
-:= -- 805
-add.period$ -- 49
-call.type$ -- 11
-change.case$ -- 67
-chr.to.int$ -- 11
-cite$ -- 11
-duplicate$ -- 191
-empty$ -- 280
-format.name$ -- 66
-if$ -- 883
-int.to.chr$ -- 1
+            721 strings with 10561 characters,
+and the built_in function-call counts, 15902 in all, are:
+= -- 1637
+> -- 792
+< -- 23
++ -- 237
+- -- 228
+* -- 1322
+:= -- 2695
+add.period$ -- 156
+call.type$ -- 32
+change.case$ -- 194
+chr.to.int$ -- 31
+cite$ -- 32
+duplicate$ -- 683
+empty$ -- 1031
+format.name$ -- 266
+if$ -- 3253
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 5
-newline$ -- 63
-num.names$ -- 44
-pop$ -- 59
+missing$ -- 26
+newline$ -- 170
+num.names$ -- 128
+pop$ -- 224
 preamble$ -- 1
-purify$ -- 66
+purify$ -- 195
 quote$ -- 0
-skip$ -- 136
+skip$ -- 478
 stack$ -- 0
-substring$ -- 232
-swap$ -- 37
-text.length$ -- 2
+substring$ -- 1019
+swap$ -- 175
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 99
+type$ -- 282
 warning$ -- 0
-while$ -- 42
+while$ -- 147
 width$ -- 0
-write$ -- 152
-(There were 14 warnings)
+write$ -- 433
+(There was 1 error message)

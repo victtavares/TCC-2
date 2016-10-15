@@ -1,10 +1,79 @@
 \begin{thebibliography}{}
 
+\bibitem[Abbate {\em et~al.}(2011)Abbate, Avvenuti, Cola, Corsini, Light, and
+  Vecchio]{abbate2011recognition}
+Abbate, S., Avvenuti, M., Cola, G., Corsini, P., Light, J., and Vecchio, A.
+  (2011).
+\newblock Recognition of false alarms in fall detection systems.
+\newblock In {\em 2011 IEEE Consumer Communications and Networking Conference
+  (CCNC)\/}, pages 23--28. IEEE.
+
+\bibitem[Anzai(2012)Anzai]{anzai2012pattern}
+Anzai, Y. (2012).
+\newblock {\em Pattern Recognition \& Machine Learning\/}.
+\newblock Elsevier.
+
+\bibitem[Cao {\em et~al.}(2012)Cao, Yang, and Liu]{cao2012falld}
+Cao, Y., Yang, Y., and Liu, W. (2012).
+\newblock E-falld: A fall detection system using android-based smartphone.
+\newblock In {\em Fuzzy Systems and Knowledge Discovery (FSKD), 2012 9th
+  International Conference on\/}, pages 1509--1513. IEEE.
+
+\bibitem[Casilari {\em et~al.}(2015)Casilari, Luque, and
+  Mor{\'o}n]{casilari2015analysis}
+Casilari, E., Luque, R., and Mor{\'o}n, M.-J. (2015).
+\newblock Analysis of android device-based solutions for fall detection.
+\newblock {\em Sensors\/}, {\bf 15}(8), 17827--17894.
+
+\bibitem[Cucchiara {\em et~al.}(2005)Cucchiara, Grana, Prati, and
+  Vezzani]{cucchiara2005probabilistic}
+Cucchiara, R., Grana, C., Prati, A., and Vezzani, R. (2005).
+\newblock Probabilistic posture classification for human-behavior analysis.
+\newblock {\em IEEE Transactions on systems, man, and cybernetics-Part A:
+  Systems and Humans\/}, {\bf 35}(1), 42--54.
+
+\bibitem[Foroughi {\em et~al.}(2008)Foroughi, Naseri, Saberi, and
+  Yazdi]{foroughi2008eigenspace}
+Foroughi, H., Naseri, A., Saberi, A., and Yazdi, H.~S. (2008).
+\newblock An eigenspace-based approach for human fall detection using
+  integrated time motion image and neural network.
+\newblock In {\em 2008 9th International Conference on Signal Processing\/},
+  pages 1499--1503. IEEE.
+
 \bibitem[Gartner(2015)Gartner]{smartphoneSales:15}
 Gartner (2015).
 \newblock Gartner says smartphone sales surpassed one billion units in 2014.
 \newblock \url{http://www.gartner.com/newsroom/id/2996817/}.
 \newblock Accessado em 22 de Abril de 2016.
+
+\bibitem[Gjoreski {\em et~al.}(2011)Gjoreski, Lustrek, and
+  Gams]{gjoreski2011accelerometer}
+Gjoreski, H., Lustrek, M., and Gams, M. (2011).
+\newblock Accelerometer placement for posture recognition and fall detection.
+\newblock In {\em Intelligent environments (IE), 2011 7th international
+  conference on\/}, pages 47--54. IEEE.
+
+\bibitem[Google(2016a)Google]{sensorAndroidDocs}
+Google (2016a).
+\newblock Sensor coordinate system.
+\newblock
+  \url{https://developer.android.com/guide/topics/sensors/sensors_overview.html#sensors-intro}.
+\newblock Accessado em 10 de Setembro de 2016.
+
+\bibitem[Google(2016b)Google]{GyroscopeAndroidDocs}
+Google (2016b).
+\newblock Using the gyroscope.
+\newblock
+  \url{http://developer.android.com/guide/topics/sensors/sensors_motion.html#sensors-motion-gyro}.
+\newblock Accessado em 08 de Maio de 2016.
+
+\bibitem[Habib {\em et~al.}(2014)Habib, Mohktar, Kamaruzzaman, Lim, Pin, and
+  Ibrahim]{habib2014smartphone}
+Habib, M.~A., Mohktar, M.~S., Kamaruzzaman, S.~B., Lim, K.~S., Pin, T.~M., and
+  Ibrahim, F. (2014).
+\newblock Smartphone-based solutions for fall detection and prevention:
+  challenges and open issues.
+\newblock {\em Sensors\/}, {\bf 14}(4), 7181--7208.
 
 \bibitem[He {\em et~al.}(2012)He, Li, and Bao]{FallDectionSmartPhone:12}
 He, Y., Li, Y., and Bao, S.-D. (2012).
@@ -38,10 +107,25 @@ Igual, R., Medrano, C., and Plaza, I. (2013).
 \newblock Challenges, issues and trends in fall detection systems.
 \newblock {\em Biomedical engineering online\/}, {\bf 12}(1), 1.
 
+\bibitem[Kangas {\em et~al.}(2007)Kangas, Konttila, Winblad, and
+  Jamsa]{kangas2007determination}
+Kangas, M., Konttila, A., Winblad, I., and Jamsa, T. (2007).
+\newblock Determination of simple thresholds for accelerometry-based parameters
+  for fall detection.
+\newblock In {\em 2007 29th Annual International Conference of the IEEE
+  Engineering in Medicine and Biology Society\/}, pages 1367--1370. IEEE.
+
 \bibitem[Legters(2002)Legters]{legters2002fear}
 Legters, K. (2002).
 \newblock Fear of falling.
 \newblock {\em Physical therapy\/}, {\bf 82}(3), 264--272.
+
+\bibitem[Lukowicz {\em et~al.}(2004)Lukowicz, Kirstein, and
+  Troster]{lukowicz2004wearable}
+Lukowicz, P., Kirstein, T., and Troster, G. (2004).
+\newblock Wearable systems for health care applications.
+\newblock {\em Methods of Information in Medicine-Methodik der Information in
+  der Medizin\/}, {\bf 43}(3), 232--238.
 
 \bibitem[Mehner {\em et~al.}(2013)Mehner, Klauck, and
   Koenig]{mehner2013location}
@@ -50,11 +134,43 @@ Mehner, S., Klauck, R., and Koenig, H. (2013).
 \newblock In {\em Proceedings of the 6th International Conference on PErvasive
   Technologies Related to Assistive Environments\/}, page~11. ACM.
 
+\bibitem[Milette and Stroud(2012)Milette and Stroud]{milette2012professional}
+Milette, G. and Stroud, A. (2012).
+\newblock {\em Professional Android sensor programming\/}.
+\newblock John Wiley \& Sons.
+
+\bibitem[Mubashir {\em et~al.}(2013)Mubashir, Shao, and
+  Seed]{mubashir2013survey}
+Mubashir, M., Shao, L., and Seed, L. (2013).
+\newblock A survey on fall detection: Principles and approaches.
+\newblock {\em Neurocomputing\/}, {\bf 100}, 144--152.
+
+\bibitem[Pivato {\em et~al.}(2011)Pivato, Dalpez, Macii, and
+  Petri]{pivato2011wearable}
+Pivato, P., Dalpez, S., Macii, D., and Petri, D. (2011).
+\newblock A wearable wireless sensor node for body fall detection.
+\newblock In {\em Measurements and Networking Proceedings (M\&N), 2011 IEEE
+  International Workshop on\/}, pages 116--121. IEEE.
+
 \bibitem[{Portal Brasil}(2012){Portal Brasil}]{portalBrasilQuedas:12}
 {Portal Brasil} (2012).
 \newblock Quedas.
 \newblock \url{http://www.brasil.gov.br/saude/2012/04/quedas/}.
 \newblock Accessado em 21 de Abril de 2016.
+
+\bibitem[Rougier and Meunier(2005)Rougier and Meunier]{rougier2005demo}
+Rougier, C. and Meunier, J. (2005).
+\newblock Demo: Fall detection using 3d head trajectory extracted from a single
+  camera video sequence.
+\newblock {\em Journal of Telemedicine and Telecare\/}, {\bf 11}(4), 37--42.
+
+\bibitem[Rougier {\em et~al.}(2011)Rougier, Meunier, St-Arnaud, and
+  Rousseau]{rougier2011robust}
+Rougier, C., Meunier, J., St-Arnaud, A., and Rousseau, J. (2011).
+\newblock Robust video surveillance for fall detection based on human shape
+  deformation.
+\newblock {\em IEEE Transactions on Circuits and Systems for Video
+  Technology\/}, {\bf 21}(5), 611--622.
 
 \bibitem[Samsung(2016)Samsung]{samsungSpecification:16}
 Samsung (2016).
@@ -62,10 +178,34 @@ Samsung (2016).
 \newblock \url{http://www.samsung.com/global/galaxy/gear-s2/#!/spec/}.
 \newblock Accessado em 22 de Abril de 2016.
 
+\bibitem[Sposaro and Tyson(2009)Sposaro and Tyson]{sposaro2009ifall}
+Sposaro, F. and Tyson, G. (2009).
+\newblock ifall: an android application for fall monitoring and response.
+\newblock In {\em 2009 Annual International Conference of the IEEE Engineering
+  in Medicine and Biology Society\/}, pages 6119--6122. IEEE.
+
 \bibitem[{United Nations}(2013){United Nations}]{unPopulation:13}
 {United Nations} (2013).
 \newblock World population ageing 2013.
 \newblock Report, The Department of Economic and Social Affairs of the United
   Nations.
+
+\bibitem[Zhang {\em et~al.}(2013)Zhang, Ren, and Shi]{zhang2013honey}
+Zhang, Q., Ren, L., and Shi, W. (2013).
+\newblock Honey: A multimodality fall detection and telecare system.
+\newblock {\em Telemedicine and e-Health\/}, {\bf 19}(5), 415--429.
+
+\bibitem[Zhao {\em et~al.}(2012)Zhao, Chen, Wang, and Chen]{zhao2012fallalarm}
+Zhao, Z., Chen, Y., Wang, S., and Chen, Z. (2012).
+\newblock Fallalarm: Smart phone based fall detecting and positioning system.
+\newblock {\em Procedia Computer Science\/}, {\bf 10}, 617--624.
+
+\bibitem[Zhuang {\em et~al.}(2009)Zhuang, Huang, Potamianos, and
+  Hasegawa-Johnson]{zhuang2009acoustic}
+Zhuang, X., Huang, J., Potamianos, G., and Hasegawa-Johnson, M. (2009).
+\newblock Acoustic fall detection using gaussian mixture models and gmm
+  supervectors.
+\newblock In {\em 2009 IEEE International Conference on Acoustics, Speech and
+  Signal Processing\/}, pages 69--72. IEEE.
 
 \end{thebibliography}
