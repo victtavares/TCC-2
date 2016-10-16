@@ -19,4 +19,7 @@
 \contentsline {subsection}{\numberline {3.3.1}Reconhecimento de Padr\IeC {\~o}es}{15}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Baseado em Limiares}{16}{subsection.3.3.2}
 \contentsline {section}{\numberline {3.4}Trabalhos Relacionados}{17}{section.3.4}
-\contentsline {chapter}{Refer\IeC {\^e}ncias Bibliogr\IeC {\'a}ficas}{18}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}SPEEDY - Detector de Quedas em um Rel\IeC {\'o}gio de Pulso}{17}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}F2D - Sistema de Detec\IeC {\c c}\IeC {\~a}o de Quedas}{18}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Sistema de Detec\IeC {\c c}\IeC {\~a}o de Quedas de Pulso}{19}{subsection.3.4.3}
+\contentsline {chapter}{Refer\IeC {\^e}ncias Bibliogr\IeC {\'a}ficas}{21}{figure.3.5}

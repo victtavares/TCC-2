@@ -32,6 +32,12 @@ Cucchiara, R., Grana, C., Prati, A., and Vezzani, R. (2005).
 \newblock {\em IEEE Transactions on systems, man, and cybernetics-Part A:
   Systems and Humans\/}, {\bf 35}(1), 42--54.
 
+\bibitem[Degen {\em et~al.}(2003)Degen, Jaeckel, Rufer, and
+  Wyss]{degen2003speedy}
+Degen, T., Jaeckel, H., Rufer, M., and Wyss, S. (2003).
+\newblock Speedy: A fall detector in a wrist watch.
+\newblock In {\em ISWC\/}, pages 184--189.
+
 \bibitem[Foroughi {\em et~al.}(2008)Foroughi, Naseri, Saberi, and
   Yazdi]{foroughi2008eigenspace}
 Foroughi, H., Naseri, A., Saberi, A., and Yazdi, H.~S. (2008).
@@ -114,6 +120,14 @@ Kangas, M., Konttila, A., Winblad, I., and Jamsa, T. (2007).
   for fall detection.
 \newblock In {\em 2007 29th Annual International Conference of the IEEE
   Engineering in Medicine and Biology Society\/}, pages 1367--1370. IEEE.
+
+\bibitem[Kostopoulos {\em et~al.}(2015)Kostopoulos, Nunes, Salvi, Deriaz, and
+  Torrent]{kostopoulos2015f2d}
+Kostopoulos, P., Nunes, T., Salvi, K., Deriaz, M., and Torrent, J. (2015).
+\newblock F2d: A fall detection system tested with real data from daily life of
+  elderly people.
+\newblock In {\em 2015 17th International Conference on E-health Networking,
+  Application \& Services (HealthCom)\/}, pages 397--403. IEEE.
 
 \bibitem[Legters(2002)Legters]{legters2002fear}
 Legters, K. (2002).

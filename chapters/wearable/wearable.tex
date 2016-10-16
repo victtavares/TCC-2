@@ -108,7 +108,69 @@ A escolha dos limiares é um fato determinante para o sucesso deste tipo de algo
 De acordo com \cite{cao2012falld}, a performance dos algoritmos aumenta significadamente quando utilizamos valores de limiar dinâmicos. De acordo com sua pesquisa, o número de eventos de queda que não foram caracterizadas como tal, cairam de 53 para 29 quando o peso, sexo idade foram levados em consideração no momento da definição dos limiares.
 
 Outra questão importante quando utilizado este tipo de algoritmo é o número de limiares utilizados. De acordo com \cite{casilari2015analysis}, o uso de um único limiar faz com que o algoritmo emita um número grande de alerta falsos, categorizando \ac{ADL} como eventos de queda, fazendo com que o uso de somente um limiar não seja adequado no desenvolvimento de \ac{FDS}.
+
+
 \section{Trabalhos Relacionados}
 \label{sec:FDS_examples}
-d
+Como vimos no decorrer desse trabalho, não existe na literatura um algoritmo ou dispositivo padrão para o desenvolvimento de \ac{FDS}. A plataforma vestível é bastante promissora por estar naturalmente aclopada a alguma parte do corpo do usuário, sendo possivel criar um algoritmo de detecção mais confiáveis, já que, como visto em \cite{casilari2015analysis}, grande parte dos algoritmos de detecção de quedas tem como pré-condição para o seu bom funcionamento, que o dispositivo esteja localizado em uma posição fixa do corpo, como cintura, pulso ou cabeça. Sendo assim, falaremos sobre três sistemas de detecção de quedas que embarcaram os seus sistemas de detecção de quedas em plataformas vestíveis. 
+
+\subsection{SPEEDY - Detector de Quedas em um Relógio de Pulso}
+SPEEDY foi o primeiro protótipo de um relógio detector de quedas construido em um smartwatch \citep{degen2003speedy}. Em seu trabalho, ele só utilizou um 2 sensores que são capazes de medir a aceleração através de 3 eixos \textit{x, y, z}. Na figura \ref{fig:speedy} é possível ver o protótipo do sistema desenvolvido e os 3 eixos utilizados para calcular o valor da aceleração. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.5]{imagens/speedy.png}
+	\caption{ SPEEDY e seus eixos \cite{degen2003speedy}.}
+	\label{fig:speedy}
+\end{figure} 
+
+O algoritmo de detecção de quedas do Speedy utiliza um algoritmo baseado em limiares com 3 valores distintos: o valor de \ac{SMV} calculado através da formula que pode ser vista em \ref{eq:SMV}, dois valores de velocidade distintos chamados de $v_1$ e $v_2$. A velocidade $v_1$ é o valor aproximado da velocidade vertical (de queda), e o valor da velocidade $v_2$ representa a velocidade do dispositivo Speedy. 
+
+No primeiro passo do algoritmo, um alto valor de velocidade precisa ser identificado indicando uma possível queda. Depois disso, nos próximos 3 segundos um impacto precisa ser detectado, representado por alto valores de aceleração. Depois disso, o usuário é observado por mais 60 segundos, se durante este tempo, pelo menos 40 segundos forem marcados por inatividade um alerta sonoro é emitido. 
+
+O Speedy foi avaliado através de quedas simuladas por 3 individuos diferentes em um colchão. Cada indivíduo simulou  quedas em 3 posições diferentes: Frente, lado, costas. Foram realizadas um total de 45 quedas, onde 65\% delas foram corretamente marcadas como um evento de queda. 
+
+\subsection{F2D - Sistema de Detecção de Quedas}
+F2D é uma applicação Android embarcado em um smartwatch \textit{AW-420.RX} da Simvalley Mobile\footnote{http://www.simvalley-mobile.de/} \citep{kostopoulos2015f2d}. O algoritmo implementado no F2D tem como entrada os dados do acelerômetro, levando em consideração os movimentos realizados depois de um evento de queda e a localização do usuário. 
+
+Para que se possa detectar as quedas, o F2D utiliza um algoritmo baseado em limiares, onde os limiares foram definidos utilizando um banco de dados com mais de 150 eventos simulados de queda. O algoritmo de detecção de quedas presente no F2D é composto de quatro etapas\citep{kostopoulos2015f2d}:
+
+\begin{enumerate}
+	
+	\item{\textbf{Padrão de Queda}: Para que um evento possa ser identificado como uma possível queda, o valor da aceleração precisa ultrapassar um limite que varia de $10 m/s^{2}$ a $18 m/s^{2}$ que representa o impacto da queda, e depois de um intervalo de tempo, precisa ultrapassar um limiar de $2 m/s^{2}$  a $7 m/s^{2}$, caracterizado como o movimento residual da queda. Tanto os valores exatos dos limiares, quanto o intervalo de tempo entre a análise dos mesmos variam de acordo com perfil do usuário.   }
+	
+	\item{\textbf{Módulo de Decisão}: Toda vez que ambas as condições da etapa anterior são satisfeitas é acrescido 1 em um contador. São estabelecidos dois valores $X$ e $Y$. O valor de $X$ representa o limiar do contador e $Y$ representa o seu limite. Sendo assim, o valor do contador precisa ficar entre X e Y, ou seja, $ X \leq Contador < Y $. Caso este valor seja maior que Y, outra atividade estava sendo desempenhada, como por exemplo correr, e caso este valor do contador seja menor que X, onde $X = 1$, então um movimento brusco do braço aconteceu, mas que não caracteriza uma queda.  }
+	
+	\item{\textbf{Ação posterior a Queda}: Logo depois que um evento é caracterizado como queda, o F2D é capaz de identificar se o usuário conseguiu se recuperar, e volto a exercer suas atividades normais, caso isto ocorra, o sistema não irá emitir um alerta para o seu cuidador, caso contrário, um alerta é emitido }
+	
+	\item{\textbf{Ação baseada na Localização}: O F2D também se baseia na localização do usuário. Caso este esteja na rua, e todas as etapas anteriores se concretizaram, um alarme é enviado para o cuidador. Caso o usuário esteja em casa, o sistema faz uso da tecnologia \textit{iBeacon} para categorizar certos locais como seguros ou potencialmente perigosos. O iBeacon utiliza o sistema de detecção de proximidade do \ac{BLE} para enviar um identificador único para aplicações ou sistemas operacionais compatíveis que estejam ao alcance do mesmo \citep{kostopoulos2015f2d}.  Caso o local esteja marcado como potencialmente perigoso, uma mensagem é enviada ao cuidador, caso contrário, o usuário terá a oportunidade de cancelar o envio, em um possível evento de queda.}     
+	
+	
+\end{enumerate}
+
+
+\subsection{Sistema de Detecção de Quedas de Pulso}
+O sistema proposto por \cite{hsieh2014wrist} utiliza dois dispositivos vestíveis acoplados no pulso do usuário como pode ser visto na figura \ref{fig:wrist_worn}. 
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.4]{imagens/wrist_worn.png}
+	\caption{ Dispositivos véstiveis marcados em vermelho. \cite{hsieh2014wrist}.}
+	\label{fig:wrist_worn}
+\end{figure} 
+
+
+Cada um dos dispositivos está equipado com um módulo Zigbee\footnote{http://www.zigbee.org/} responsável pela transmissão dos dados e  um acelerômetro e  giroscópio de 3 eixos. A frequência tanto do acelerômetro quanto do giroscópio foram configuradas para $50 Hz$, ou seja, os dados são coletados a cada \textit{20 ms}.
+
+
+O algoritmo proposto utiliza tanto os dados do acelerômetro quanto do giroscópio para realizar a detecção de quedas. Os dados do giróscopio funcionam como um filtro inicial, desconsiderando a maioria das ativididades cotidianas, enquanto os dados do acelerômetro são responsáveis por realizar o julgamento final. O algoritmo utilizado, assim como os demais, é baseado em limiares onde os limiares foram definidos atravês de um treinamento inicial. 
+
+O algoritmo proposto é capaz de diferenciar \ac{ADL} como bater palmas e deitar-se, de um evento de queda em 95\% dos casos. A principal desvantagem do sistema proposto é a necessidade de se utilizar 2 dispositivos, podendo torna-se desconfortável para o usuário.
+
+
+
+
+
+
 
