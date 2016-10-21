@@ -13,11 +13,24 @@ Anzai, Y. (2012).
 \newblock {\em Pattern Recognition \& Machine Learning\/}.
 \newblock Elsevier.
 
+\bibitem[Arena(2016)Arena]{lg_g2}
+Arena, G. (2016).
+\newblock Lg g2.
+\newblock \url{http://www.gsmarena.com/lg_g2-5543.php}.
+\newblock Accessado em 16 de Outubro de 2016.
+
 \bibitem[Cao {\em et~al.}(2012)Cao, Yang, and Liu]{cao2012falld}
 Cao, Y., Yang, Y., and Liu, W. (2012).
 \newblock E-falld: A fall detection system using android-based smartphone.
 \newblock In {\em Fuzzy Systems and Knowledge Discovery (FSKD), 2012 9th
   International Conference on\/}, pages 1509--1513. IEEE.
+
+\bibitem[Casilari and Oviedo-Jim{\'e}nez(2015)Casilari and
+  Oviedo-Jim{\'e}nez]{casilari2015automatic}
+Casilari, E. and Oviedo-Jim{\'e}nez, M.~A. (2015).
+\newblock Automatic fall detection system based on the combined use of a
+  smartphone and a smartwatch.
+\newblock {\em PLoS one\/}, {\bf 10}(11), e0140929.
 
 \bibitem[Casilari {\em et~al.}(2015)Casilari, Luque, and
   Mor{\'o}n]{casilari2015analysis}
@@ -46,6 +59,12 @@ Foroughi, H., Naseri, A., Saberi, A., and Yazdi, H.~S. (2008).
 \newblock In {\em 2008 9th International Conference on Signal Processing\/},
   pages 1499--1503. IEEE.
 
+\bibitem[Garlan and Shaw(1993)Garlan and Shaw]{garlan1993introduction}
+Garlan, D. and Shaw, M. (1993).
+\newblock An introduction to software architecture.
+\newblock {\em Advances in software engineering and knowledge engineering\/},
+  {\bf 1}(3.4).
+
 \bibitem[Gartner(2015)Gartner]{smartphoneSales:15}
 Gartner (2015).
 \newblock Gartner says smartphone sales surpassed one billion units in 2014.
@@ -59,15 +78,21 @@ Gjoreski, H., Lustrek, M., and Gams, M. (2011).
 \newblock In {\em Intelligent environments (IE), 2011 7th international
   conference on\/}, pages 47--54. IEEE.
 
-\bibitem[Google(2016a)Google]{sensorAndroidDocs}
+\bibitem[Google(2016a)Google]{servicesAndroidDocs}
 Google (2016a).
+\newblock Android services.
+\newblock \url{https://developer.android.com/guide/components/services.html}.
+\newblock Accessado em 24 de Setembro de 2016.
+
+\bibitem[Google(2016b)Google]{sensorAndroidDocs}
+Google (2016b).
 \newblock Sensor coordinate system.
 \newblock
   \url{https://developer.android.com/guide/topics/sensors/sensors_overview.html#sensors-intro}.
 \newblock Accessado em 10 de Setembro de 2016.
 
-\bibitem[Google(2016b)Google]{GyroscopeAndroidDocs}
-Google (2016b).
+\bibitem[Google(2016c)Google]{GyroscopeAndroidDocs}
+Google (2016c).
 \newblock Using the gyroscope.
 \newblock
   \url{http://developer.android.com/guide/topics/sensors/sensors_motion.html#sensors-motion-gyro}.
@@ -152,6 +177,12 @@ Mehner, S., Klauck, R., and Koenig, H. (2013).
 Milette, G. and Stroud, A. (2012).
 \newblock {\em Professional Android sensor programming\/}.
 \newblock John Wiley \& Sons.
+
+\bibitem[Motorola(2016)Motorola]{moto360}
+Motorola (2016).
+\newblock Moto 360.
+\newblock \url{https://www.motorola.com/us/products/moto-360}.
+\newblock Accessado em 16 de Outubro de 2016.
 
 \bibitem[Mubashir {\em et~al.}(2013)Mubashir, Shao, and
   Seed]{mubashir2013survey}

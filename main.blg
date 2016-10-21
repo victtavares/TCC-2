@@ -4,51 +4,62 @@ The top-level auxiliary file: main.aux
 A level-1 auxiliary file: chapters/introduction/introduction.aux
 A level-1 auxiliary file: chapters/fall_systems/fall_systems.aux
 A level-1 auxiliary file: chapters/wearable/wearable.aux
+A level-1 auxiliary file: chapters/proposta/proposta.aux
+A level-1 auxiliary file: chapters/avaliacao/avaliacao.aux
 The style file: natbib.bst
 Database file #1: references.bib
 Repeated entry---line 319 of file references.bib
  : @article{mubashir2013survey
  :                            ,
 I'm skipping whatever remains of this entry
-You've used 34 entries,
+Warning--I didn't find a database entry for "JSON;16"
+Warning--I didn't find a database entry for "parra2013"
+Warning--I didn't find a database entry for "Bogers:2009"
+Warning--I didn't find a database entry for "Manning:2008:IIR:1394399"
+Warning--I didn't find a database entry for "Herlocker:2004:ECF:963770.963772"
+Warning--I didn't find a database entry for "Deshpande:2004:ITN:963770.963776"
+Warning--I didn't find a database entry for "hanley1982mau"
+Warning--I didn't find a database entry for "DBLP:journals/corr/abs-1202-1112"
+Warning--I didn't find a database entry for "zhou2009predicting"
+You've used 39 entries,
             2378 wiz_defined-function locations,
-            732 strings with 11001 characters,
-and the built_in function-call counts, 17254 in all, are:
-= -- 1772
-> -- 866
-< -- 25
-+ -- 259
-- -- 250
-* -- 1433
-:= -- 2905
-add.period$ -- 167
-call.type$ -- 34
-change.case$ -- 206
-chr.to.int$ -- 33
-cite$ -- 34
-duplicate$ -- 747
-empty$ -- 1121
-format.name$ -- 290
-if$ -- 3546
-int.to.chr$ -- 2
+            776 strings with 12071 characters,
+and the built_in function-call counts, 19055 in all, are:
+= -- 1967
+> -- 943
+< -- 30
++ -- 283
+- -- 271
+* -- 1562
+:= -- 3240
+add.period$ -- 187
+call.type$ -- 39
+change.case$ -- 238
+chr.to.int$ -- 37
+cite$ -- 39
+duplicate$ -- 818
+empty$ -- 1230
+format.name$ -- 320
+if$ -- 3898
+int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 28
-newline$ -- 180
-num.names$ -- 136
-pop$ -- 247
+missing$ -- 30
+newline$ -- 208
+num.names$ -- 156
+pop$ -- 266
 preamble$ -- 1
-purify$ -- 207
+purify$ -- 239
 quote$ -- 0
-skip$ -- 524
+skip$ -- 583
 stack$ -- 0
-substring$ -- 1111
-swap$ -- 199
+substring$ -- 1199
+swap$ -- 208
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 300
+type$ -- 345
 warning$ -- 0
-while$ -- 159
+while$ -- 175
 width$ -- 0
-write$ -- 460
+write$ -- 528
 (There was 1 error message)

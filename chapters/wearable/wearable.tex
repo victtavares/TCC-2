@@ -131,6 +131,7 @@ No primeiro passo do algoritmo, um alto valor de velocidade precisa ser identifi
 O Speedy foi avaliado através de quedas simuladas por 3 individuos diferentes em um colchão. Cada indivíduo simulou  quedas em 3 posições diferentes: Frente, lado, costas. Foram realizadas um total de 45 quedas, onde 65\% delas foram corretamente marcadas como um evento de queda. 
 
 \subsection{F2D - Sistema de Detecção de Quedas}
+\label{subsec:F2D_System}
 F2D é uma applicação Android embarcado em um smartwatch \textit{AW-420.RX} da Simvalley Mobile\footnote{http://www.simvalley-mobile.de/} \citep{kostopoulos2015f2d}. O algoritmo implementado no F2D tem como entrada os dados do acelerômetro, levando em consideração os movimentos realizados depois de um evento de queda e a localização do usuário. 
 
 Para que se possa detectar as quedas, o F2D utiliza um algoritmo baseado em limiares, onde os limiares foram definidos utilizando um banco de dados com mais de 150 eventos simulados de queda. O algoritmo de detecção de quedas presente no F2D é composto de quatro etapas\citep{kostopoulos2015f2d}:
@@ -164,7 +165,7 @@ O sistema proposto por \cite{hsieh2014wrist} utiliza dois dispositivos vestívei
 Cada um dos dispositivos está equipado com um módulo Zigbee\footnote{http://www.zigbee.org/} responsável pela transmissão dos dados e  um acelerômetro e  giroscópio de 3 eixos. A frequência tanto do acelerômetro quanto do giroscópio foram configuradas para $50 Hz$, ou seja, os dados são coletados a cada \textit{20 ms}.
 
 
-O algoritmo proposto utiliza tanto os dados do acelerômetro quanto do giroscópio para realizar a detecção de quedas. Os dados do giróscopio funcionam como um filtro inicial, desconsiderando a maioria das ativididades cotidianas, enquanto os dados do acelerômetro são responsáveis por realizar o julgamento final. O algoritmo utilizado, assim como os demais, é baseado em limiares onde os limiares foram definidos atravês de um treinamento inicial. 
+O algoritmo proposto utiliza ambos os dados do acelerômetro e do giroscópio para realizar a detecção de quedas. Os dados do giróscopio funcionam como um filtro inicial, desconsiderando a maioria das ativididades cotidianas, enquanto os dados do acelerômetro são responsáveis por realizar o julgamento final. O algoritmo utilizado, assim como os demais, é baseado em limiares onde os limiares foram definidos atravês de um treinamento inicial. 
 
 O algoritmo proposto é capaz de diferenciar \ac{ADL} como bater palmas e deitar-se, de um evento de queda em 95\% dos casos. A principal desvantagem do sistema proposto é a necessidade de se utilizar 2 dispositivos, podendo torna-se desconfortável para o usuário.
 
