@@ -8,6 +8,14 @@ Abbate, S., Avvenuti, M., Cola, G., Corsini, P., Light, J., and Vecchio, A.
 \newblock In {\em 2011 IEEE Consumer Communications and Networking Conference
   (CCNC)\/}, pages 23--28. IEEE.
 
+\bibitem[Alwan {\em et~al.}(2006)Alwan, Rajendran, Kell, Mack, Dalal, Wolfe,
+  and Felder]{alwan2006smart}
+Alwan, M., Rajendran, P.~J., Kell, S., Mack, D., Dalal, S., Wolfe, M., and
+  Felder, R. (2006).
+\newblock A smart and passive floor-vibration based fall detector for elderly.
+\newblock In {\em 2006 2nd International Conference on Information \&
+  Communication Technologies\/}, volume~1, pages 1003--1007. IEEE.
+
 \bibitem[Anzai(2012)Anzai]{anzai2012pattern}
 Anzai, Y. (2012).
 \newblock {\em Pattern Recognition \& Machine Learning\/}.
@@ -25,16 +33,14 @@ Cao, Y., Yang, Y., and Liu, W. (2012).
 \newblock In {\em Fuzzy Systems and Knowledge Discovery (FSKD), 2012 9th
   International Conference on\/}, pages 1509--1513. IEEE.
 
-\bibitem[Casilari and Oviedo-Jim{\'e}nez(2015)Casilari and
-  Oviedo-Jim{\'e}nez]{casilari2015automatic}
-Casilari, E. and Oviedo-Jim{\'e}nez, M.~A. (2015).
+\bibitem[Casilari(2015a)Casilari]{casilari2015automatic}
+Casilari, Eduardo e Oviedo-Jim{\'e}nez, M.~A. (2015a).
 \newblock Automatic fall detection system based on the combined use of a
   smartphone and a smartwatch.
 \newblock {\em PLoS one\/}, {\bf 10}(11), e0140929.
 
-\bibitem[Casilari {\em et~al.}(2015)Casilari, Luque, and
-  Mor{\'o}n]{casilari2015analysis}
-Casilari, E., Luque, R., and Mor{\'o}n, M.-J. (2015).
+\bibitem[Casilari(2015b)Casilari]{casilari2015analysis}
+Casilari, Eduardo e~Luque, R. e. M. M.-J. (2015b).
 \newblock Analysis of android device-based solutions for fall detection.
 \newblock {\em Sensors\/}, {\bf 15}(8), 17827--17894.
 
@@ -45,9 +51,8 @@ Cucchiara, R., Grana, C., Prati, A., and Vezzani, R. (2005).
 \newblock {\em IEEE Transactions on systems, man, and cybernetics-Part A:
   Systems and Humans\/}, {\bf 35}(1), 42--54.
 
-\bibitem[Degen {\em et~al.}(2003)Degen, Jaeckel, Rufer, and
-  Wyss]{degen2003speedy}
-Degen, T., Jaeckel, H., Rufer, M., and Wyss, S. (2003).
+\bibitem[Degen {\em et~al.}(2003)Degen, Jaeckel, and Rufer]{degen2003speedy}
+Degen, T., Jaeckel, H., and Rufer, Michael e~Wyss, S. (2003).
 \newblock Speedy: A fall detector in a wrist watch.
 \newblock In {\em ISWC\/}, pages 184--189.
 
@@ -59,8 +64,8 @@ Foroughi, H., Naseri, A., Saberi, A., and Yazdi, H.~S. (2008).
 \newblock In {\em 2008 9th International Conference on Signal Processing\/},
   pages 1499--1503. IEEE.
 
-\bibitem[Garlan and Shaw(1993)Garlan and Shaw]{garlan1993introduction}
-Garlan, D. and Shaw, M. (1993).
+\bibitem[Garlan(1993)Garlan]{garlan1993introduction}
+Garlan, David e~Shaw, M. (1993).
 \newblock An introduction to software architecture.
 \newblock {\em Advances in software engineering and knowledge engineering\/},
   {\bf 1}(3.4).
@@ -70,6 +75,14 @@ Gartner (2015).
 \newblock Gartner says smartphone sales surpassed one billion units in 2014.
 \newblock \url{http://www.gartner.com/newsroom/id/2996817/}.
 \newblock Accessado em 22 de Abril de 2016.
+
+\bibitem[Gibson {\em et~al.}(1987)Gibson, Andres, Isaacs, Radebaugh, and
+  Wormpetersen]{gibson1987prevention}
+Gibson, M.~J., Andres, R.~O., Isaacs, B., Radebaugh, T., and Wormpetersen, J.
+  (1987).
+\newblock The prevention of falls in later life-a report of the
+  kellogg-international-work-group on the prevention of falls by the elderly.
+\newblock {\em Danish Medical Bulletin\/}, {\bf 34}, 1--24.
 
 \bibitem[Gjoreski {\em et~al.}(2011)Gjoreski, Lustrek, and
   Gams]{gjoreski2011accelerometer}
@@ -106,12 +119,6 @@ Habib, M.~A., Mohktar, M.~S., Kamaruzzaman, S.~B., Lim, K.~S., Pin, T.~M., and
   challenges and open issues.
 \newblock {\em Sensors\/}, {\bf 14}(4), 7181--7208.
 
-\bibitem[He {\em et~al.}(2012)He, Li, and Bao]{FallDectionSmartPhone:12}
-He, Y., Li, Y., and Bao, S.-D. (2012).
-\newblock Fall detection by built-in tri-accelerometer of smartphone.
-\newblock {\em Proceedings of 2012 IEEE-EMBS International Conference on
-  Biomedical and Health Informatics\/}, {\bf 25}, 184--187.
-
 \bibitem[Hsieh {\em et~al.}(2014)Hsieh, Chen, Wu, and Yue]{hsieh2014wrist}
 Hsieh, S.-L., Chen, C.-C., Wu, S.-H., and Yue, T.-W. (2014).
 \newblock A wrist-worn fall detection system using accelerometers and
@@ -138,6 +145,12 @@ Igual, R., Medrano, C., and Plaza, I. (2013).
 \newblock Challenges, issues and trends in fall detection systems.
 \newblock {\em Biomedical engineering online\/}, {\bf 12}(1), 1.
 
+\bibitem[JSON(2016)JSON]{JSON16}
+JSON (2016).
+\newblock Json.
+\newblock \url{http://www.json.org/}.
+\newblock Accessado em 12 de Outubro de 2016.
+
 \bibitem[Kangas {\em et~al.}(2007)Kangas, Konttila, Winblad, and
   Jamsa]{kangas2007determination}
 Kangas, M., Konttila, A., Winblad, I., and Jamsa, T. (2007).
@@ -159,9 +172,9 @@ Legters, K. (2002).
 \newblock Fear of falling.
 \newblock {\em Physical therapy\/}, {\bf 82}(3), 264--272.
 
-\bibitem[Lukowicz {\em et~al.}(2004)Lukowicz, Kirstein, and
-  Troster]{lukowicz2004wearable}
-Lukowicz, P., Kirstein, T., and Troster, G. (2004).
+\bibitem[Lukowicz and Kirstein(2004)Lukowicz and
+  Kirstein]{lukowicz2004wearable}
+Lukowicz, P. and Kirstein, Tnde~Troster, G. (2004).
 \newblock Wearable systems for health care applications.
 \newblock {\em Methods of Information in Medicine-Methodik der Information in
   der Medizin\/}, {\bf 43}(3), 232--238.
@@ -173,8 +186,8 @@ Mehner, S., Klauck, R., and Koenig, H. (2013).
 \newblock In {\em Proceedings of the 6th International Conference on PErvasive
   Technologies Related to Assistive Environments\/}, page~11. ACM.
 
-\bibitem[Milette and Stroud(2012)Milette and Stroud]{milette2012professional}
-Milette, G. and Stroud, A. (2012).
+\bibitem[Milette(2012)Milette]{milette2012professional}
+Milette, Greg e~Stroud, A. (2012).
 \newblock {\em Professional Android sensor programming\/}.
 \newblock John Wiley \& Sons.
 
@@ -190,24 +203,11 @@ Mubashir, M., Shao, L., and Seed, L. (2013).
 \newblock A survey on fall detection: Principles and approaches.
 \newblock {\em Neurocomputing\/}, {\bf 100}, 144--152.
 
-\bibitem[Pivato {\em et~al.}(2011)Pivato, Dalpez, Macii, and
-  Petri]{pivato2011wearable}
-Pivato, P., Dalpez, S., Macii, D., and Petri, D. (2011).
-\newblock A wearable wireless sensor node for body fall detection.
-\newblock In {\em Measurements and Networking Proceedings (M\&N), 2011 IEEE
-  International Workshop on\/}, pages 116--121. IEEE.
-
 \bibitem[{Portal Brasil}(2012){Portal Brasil}]{portalBrasilQuedas:12}
 {Portal Brasil} (2012).
 \newblock Quedas.
 \newblock \url{http://www.brasil.gov.br/saude/2012/04/quedas/}.
 \newblock Accessado em 21 de Abril de 2016.
-
-\bibitem[Rougier and Meunier(2005)Rougier and Meunier]{rougier2005demo}
-Rougier, C. and Meunier, J. (2005).
-\newblock Demo: Fall detection using 3d head trajectory extracted from a single
-  camera video sequence.
-\newblock {\em Journal of Telemedicine and Telecare\/}, {\bf 11}(4), 37--42.
 
 \bibitem[Rougier {\em et~al.}(2011)Rougier, Meunier, St-Arnaud, and
   Rousseau]{rougier2011robust}
@@ -217,23 +217,46 @@ Rougier, C., Meunier, J., St-Arnaud, A., and Rousseau, J. (2011).
 \newblock {\em IEEE Transactions on Circuits and Systems for Video
   Technology\/}, {\bf 21}(5), 611--622.
 
+\bibitem[Rougier(2005)Rougier]{rougier2005demo}
+Rougier, Caroline e~Meunier, J. (2005).
+\newblock Demo: Fall detection using 3d head trajectory extracted from a single
+  camera video sequence.
+\newblock {\em Journal of Telemedicine and Telecare\/}, {\bf 11}(4), 37--42.
+
 \bibitem[Samsung(2016)Samsung]{samsungSpecification:16}
 Samsung (2016).
 \newblock Gear s2.
 \newblock \url{http://www.samsung.com/global/galaxy/gear-s2/#!/spec/}.
 \newblock Accessado em 22 de Abril de 2016.
 
-\bibitem[Sposaro and Tyson(2009)Sposaro and Tyson]{sposaro2009ifall}
-Sposaro, F. and Tyson, G. (2009).
+\bibitem[Sposaro(2009)Sposaro]{sposaro2009ifall}
+Sposaro, Frank, T.~G. (2009).
 \newblock ifall: an android application for fall monitoring and response.
 \newblock In {\em 2009 Annual International Conference of the IEEE Engineering
   in Medicine and Biology Society\/}, pages 6119--6122. IEEE.
+
+\bibitem[Stephen R.~Lord(2001)Stephen R.~Lord]{bookFallOlderPeople:01}
+Stephen R.~Lord, C. S. e. H. B.~M. (2001).
+\newblock {\em Falls in older people: risk factors and strategies for
+  prevention\/}.
+\newblock Cambridge University Press, Cambridge.
 
 \bibitem[{United Nations}(2013){United Nations}]{unPopulation:13}
 {United Nations} (2013).
 \newblock World population ageing 2013.
 \newblock Report, The Department of Economic and Social Affairs of the United
   Nations.
+
+\bibitem[Wild {\em et~al.}(1981)Wild, Nayak, and Isaacs]{wild1981dangerous}
+Wild, D., Nayak, U., and Isaacs, B. (1981).
+\newblock How dangerous are falls in old people at home?
+\newblock {\em Br Med J (Clin Res Ed)\/}, {\bf 282}(6260), 266--268.
+
+\bibitem[Yi~He(2012)Yi~He]{FallDectionSmartPhone:12}
+Yi~He, Ye~Li, S.-D.~B. (2012).
+\newblock Fall detection by built-in tri-accelerometer of smartphone.
+\newblock {\em Proceedings of 2012 IEEE-EMBS International Conference on
+  Biomedical and Health Informatics\/}, {\bf 25}, 184--187.
 
 \bibitem[Zhang {\em et~al.}(2013)Zhang, Ren, and Shi]{zhang2013honey}
 Zhang, Q., Ren, L., and Shi, W. (2013).

@@ -1,38 +1,38 @@
-\chapter{Avaliação}
+\chapter{Estudo Experimental}
 \label{cap:avaliacao}
 
-Neste capítulo será apresentado o processo de avaliação utilizado para verificar a precisão do sistema de detecção de quedas proposto. Espera-se que o SafeWatch apresente uma precisão similar ao demais sistemas de detecção de quedas presentes na literatura.
+Neste capítulo será apresentado o processo de avaliação utilizado para verificar a precisão do sistema de detecção de quedas proposto. Espera-se que o SafeWatch apresente uma precisão similar aos demais sistemas de detecção de quedas presentes na literatura.
 
-As seções desse capítulo são organizadas da seguinte maneira: A seção \ref{sec:metodology} apresenta os detalhes da metodologia utilizada para avaliar o SafeWatch; A Seção \ref{sec:metrics} mostra as métricas utilizadas na avaliação; A Seção \ref{sec:results} apresenta os resultados obtidos no experimento realizado e faz uma comparação com os resultados obtidos em outros trabalhos.
+As seções desse capítulo são organizadas da seguinte maneira: A Seção \ref{sec:metodology} apresenta os detalhes da metodologia utilizada para avaliar o SafeWatch; A Seção \ref{sec:metrics} mostra as métricas utilizadas na avaliação; A Seção \ref{sec:results} apresenta os resultados obtidos no experimento realizado e faz uma comparação com os resultados obtidos em outros trabalhos.
 
 
 
 \section{Metodologia}
 \label{sec:metodology}
 
-Para avaliarmos a performance do SafeWatch foi realizado uma série de experimentos. O algoritmo de detecção de quedas proposto foi avaliado através de um conjunto de quedas simuladas e também um conjunto de atividades diárias realizadas pelos indivíduos de teste. O grupo de voluntários possui um perfil bem diversificado, sendo composto de 3 homens e 5 mulheres como pode ser visto na tabela \ref{tab:experiment}.
+Para avaliarmos o desempenho do SafeWatch foi realizado uma série de experimentos. O algoritmo de detecção de quedas proposto foi avaliado através de um conjunto de quedas simuladas e também um conjunto de atividades diárias realizadas pelos participantes do experimento. O grupo de voluntários possui um perfil bem diversificado, sendo composto de 3 homens e 5 mulheres como pode ser visto na tabela \ref{tab:experiment}.
 
 
 \begin{table}[h]
 	\centering
-	\caption{Indivíduos de teste.}
+	\caption{Participantes do experimento}
 	\label{tab:experiment}
 	\begin{tabular}{c|c|c|c|c}
 		\hline
 		\textbf{Individuo}  & \textbf{Idade} 	& \textbf{Sexo}   &    \textbf{Peso}    & \textbf{Altura} 	 \\
-		Individuo 1         &    28 anos         & Masculino            & 82kg      		& 1.80m          \\  
-		Individuo 2         &    20 anos         & Feminino             & 63kg      		& 1.63m          \\
-		Individuo 3         &    25 anos         & Feminino             & 62kg      		& 1.59m          \\ 
-		Individuo 4         &    29 anos         & Masculino            & 130kg      		& 1.65m          \\ 
-		Individuo 5         &    27 anos         & Feminino             & 57kg      		& 1.69m          \\ 
-		Individuo 6         &    14 anos         & Feminino             & 45kg      		& 1.62m          \\
-		Individuo 7         &    20 anos         & Masculino            & 88kg      		& 1.80m          \\ 
-		Individuo 8         &    30 anos         & Feminino             & 62kg      		& 1.55m          \\   
+		Individuo 1         &    28          & Masculino            & 82kg      		& 1.80m          \\  
+		Individuo 2         &    20          & Feminino             & 63kg      		& 1.63m          \\
+		Individuo 3         &    25          & Feminino             & 62kg      		& 1.59m          \\ 
+		Individuo 4         &    29          & Masculino            & 130kg      		& 1.65m          \\ 
+		Individuo 5         &    27          & Feminino             & 57kg      		& 1.69m          \\ 
+		Individuo 6         &    14          & Feminino             & 45kg      		& 1.62m          \\
+		Individuo 7         &    20          & Masculino            & 88kg      		& 1.80m          \\ 
+		Individuo 8         &    30          & Feminino             & 62kg      		& 1.55m          \\   
 	\end{tabular}
 \end{table}
 
  
-O smartwatch escolhido para realizar o experimento foi um \textit{Moto 360} da 1º geração com as seguintes caracteristicas \citep{moto360}:
+O smartwatch escolhido para realizar o experimento foi um \textit{Moto 360} da 1º geração com as seguintes características \citep{moto360}:
 
 	\begin{enumerate}
 		\item Sistema Operacional: Android Wear 2.0.
@@ -41,7 +41,7 @@ O smartwatch escolhido para realizar o experimento foi um \textit{Moto 360} da 1
 		\item Capacidade de Armazenamento: 4GB.
 	\end{enumerate}
 	
-Já o smartphone escolhido foi um \textit{LG G2} com as seguintes caracteristicas \citep{lg_g2}:
+Já o smartphone escolhido foi um \textit{LG G2} com as seguintes características \citep{lg_g2}:
 
 	\begin{enumerate}
 		\item Sistema Operacional: Android  Lollipop 5.0.2.
@@ -54,9 +54,9 @@ Já o smartphone escolhido foi um \textit{LG G2} com as seguintes caracteristica
 Para avaliar o algoritmo de detecção de quedas implementado, foi realizado o seguinte experimento, composto de três etapas:
 
 \begin{itemize}
-	\item{\textbf{Preparação}: Nesta etapa é solicitado que o usuário coloque o smartwatch em seu pulso e ajuste a pulseira do relógio de uma maneira que o smartwatch permaneça firme, mas confortável. Depois disso, é informado que o usário deverá simular duas quedas em cada uma dos sentidos escolhidos: Costas, Frontal, Lado Direito, Lado Esquerdo. A ordem das quedas é decidida pelo usuário, o único requisito é que ele realize todas as oito quedas. }
+	\item{\textbf{Preparação}: Nesta etapa é solicitado que o usuário coloque o smartwatch em seu pulso e ajuste a pulseira do relógio de uma maneira que o smartwatch permaneça firme, mas confortável. Depois disso, é informado que o usuário deverá simular duas quedas em cada um dos sentidos escolhidos: Costas, Frontal, Lado Direito, Lado Esquerdo. A ordem das quedas é decidida pelo usuário, o único requisito é que ele realize todas as oito quedas. }
 	
-	\item{\textbf{Realização das Quedas}: O usuário irá se posicionar de pé, na frente de um colchão coberto de almofodas como pode ser visto na figura \ref{fig:fall_image}. A partir desta posição, ele irá realizar as oitos quedas, duas de cada tipo, como descrito na etapa anterior. }
+	\item{\textbf{Realização das Quedas}: O usuário irá se posicionar de pé, na frente de um colchão coberto de almofadas como pode ser visto na Figura \ref{fig:fall_image}. A partir desta posição, ele irá realizar as oitos quedas, duas de cada tipo, como descrito na etapa anterior. }
 	
 	\item{\textbf{Realização de Atividades Diárias}: Nesta etapa solicitamos que o usuário realize 4 atividades do seu cotidiano. Elas são: sentar em uma cadeira, levantar de uma cadeira, deitar no colchão e levantar do colchão. Estas atividades são realizadas afim de verificar se o sistema proposto é capaz de distinguir atividades diárias de um evento de queda.}
 	
@@ -75,7 +75,7 @@ Para avaliar o algoritmo de detecção de quedas implementado, foi realizado o s
 \section{Métricas de Avaliação}
 \label{sec:metrics}
 
-Para que possamos analisar a performance do sistema de detecção de quedas foram utilizadas três métricas, a \textit{Sensibilidade},  \textit{Especificidade} e \textit{Acurácia}. De acordo com \cite{casilari2015automatic}, os valores de \textit{Sensibilidade} e \textit{Especificidade} são duas métricas bastante utilizadas na literatura para a análise de performance em sistemas de detecção de quedas. Elas representam, respectivamente, a proporção de eventos de queda e \ac{ADL} que foram classificadas corretamente como tal. Já a \textit{Acurácia} é uma combinação da \textit{Sensibilidade} e da \textit{Especificidade} e nos dá uma ideia geral da performance do sistema.
+Para que possamos analisar a performance do sistema de detecção de quedas foram utilizadas três métricas, a \textit{Sensibilidade},  \textit{Especificidade} e \textit{Acurácia}. De acordo com \cite{casilari2015automatic}, os valores de \textit{Sensibilidade} e \textit{Especificidade} são duas métricas bastante utilizadas na literatura para a análise de performance em sistemas de detecção de quedas. Elas representam, respectivamente, a proporção de eventos de queda e \ac{AD} que foram classificadas corretamente como tal. Já a \textit{Acurácia} é uma combinação da \textit{Sensibilidade} e da \textit{Especificidade} e nos dá uma ideia geral da performance do sistema.
 
 A \textit{Sensibilidade} é expressa pela fórmula \ref{eq:Sensibilidade}. As variáveis \textit{TP} e \textit{FN} são, respectivamente, acrónimos para True Positive (Verdadeiro Positivo em inglês) e False Negative (Falso Negativo em inglês). A variável TP representa o número de eventos de queda corretamente classificadas, enquanto FN representa as quedas que não foram detectadas pelo sistema.
 
@@ -103,7 +103,7 @@ Acuracia = \frac{TP + TN}{TP + FP + TN + FN}
 \section{Resultados}
 \label{sec:results}
 
-Na tabela \ref{tab:results_fall} podemos ver os resultados dos experimentos de queda para cada um dos indivíduos. Como descrito na seção \ref{sec:metodology} cada individuo realizou duas quedas em quatro sentidos diferente. Cada elemento da tabela representa o número de quedas que foram identificadas com sucesso pelo sistema em cada uma das direções. 
+Na tabela \ref{tab:results_fall} podemos ver os resultados dos experimentos de queda para cada um dos indivíduos. Como descrito na Seção \ref{sec:metodology} cada individuo realizou duas quedas em quatro sentidos diferente. Cada elemento da tabela representa o número de quedas que foram identificadas com sucesso pelo sistema em cada uma das direções. 
 
 \begin{table}[h]
 	\centering
@@ -127,12 +127,12 @@ Na tabela \ref{tab:results_fall} podemos ver os resultados dos experimentos de q
 Como podemos ver na tabela \ref{tab:results_fall}, o número de verdadeiros positivos é de 57, enquanto o número de falsos negativos é de somente 7, o que nos dá uma \textit{especificidade} de $89,06\%$. Foi possível observar que, o limiar inicial de $6G$ no algoritmo de detecção de quedas não foi alcançado em todos os eventos erroneamente não categorizados como queda.
 
 
-Já na tabela \ref{tab:results_adl}, podemos ver os resultados do experimentos de \ac{ADL} para cada um dos individuos. Cada um deles realizou quatro tipos de ADL, como descrito na seção \ref{sec:metodology}. Cada elemento da tabela representa o número de \ac{ADL} que não foram identificadas pelo sistema como um evento de queda. 
+Já na tabela \ref{tab:results_adl}, podemos ver os resultados do experimentos de \ac{AD} para cada um dos indivíduos. Cada um deles realizou quatro tipos de \ac{AD}, como descrito na Seção \ref{sec:metodology}. Cada elemento da tabela representa o número de \ac{AD} que não foram identificadas pelo sistema como um evento de queda. 
 
 
 \begin{table}[h]
 	\centering
-	\caption{Resultados do experimentos de \ac{ADL}.}
+	\caption{Resultados do experimentos de \ac{AD}.}
 	\label{tab:results_adl}
 	\begin{tabular}{c|c|c|c|c}
 		\hline
@@ -150,11 +150,11 @@ Já na tabela \ref{tab:results_adl}, podemos ver os resultados do experimentos d
 
  
 
-Neste experimento, nenhum dos 64 eventos \ac{ADL} foi identificado como um evento de queda pelo sistema, levando a uma \textit{especificidade} de $100\%$. De forma geral o sistema possui uma \textit{acurácia} de $94,17\%$.
+Neste experimento, nenhum dos 64 eventos \ac{AD} foi identificado como um evento de queda pelo sistema, levando a uma \textit{especificidade} de $100\%$. De forma geral o sistema possui uma \textit{acurácia} de $94,17\%$.
 
-O algoritmo proposto neste trabalho apresentou resultados satisfatórios identificando um evento de queda em quase $90\%$ dos casos, e não apresentando nenhum falso positivo nas \ac{ADL} testadas. Em comparação com o Speedy, sistema desenvolvido por \cite{degen2003speedy}, o nosso sistema apresentou uma sensibilidade $24.06\%$ maior, ou seja, o SafeWatch apresentou uma especificidade de $89,06\%$ contra $65\%$ do Speedy em experimentos bastantes similares.
+O algoritmo proposto neste trabalho apresentou resultados satisfatórios identificando um evento de queda em quase $90\%$ dos casos, e não apresentando nenhum falso positivo nas \ac{AD} testadas. Em comparação com o Speedy, sistema desenvolvido por \cite{degen2003speedy}, o nosso sistema apresentou uma sensibilidade $24.06\%$ maior, ou seja, o SafeWatch apresentou uma especificidade de $89,06\%$ contra $65\%$ do Speedy em experimentos bastantes similares.
 
-Entretanto em comparação com \cite{hsieh2014wrist}, este trabalho apresentou uma \textit{sensibilidade} $5.94\%$ menor e uma \textit{especificidade} $3,3\%$ maior. Os experimentos realizados por \cite{hsieh2014wrist} foram em uma superficie acolchoada mais fina que um colchão convencional, o que leva a uma aceleração maior no impacto, diminuindo o número de falsos negativos no experimento realizado. Em relação ao tipos de quedas realizados, tanto este, quanto o trabalho proposto por \cite{hsieh2014wrist} apresentaram quatro tipos de quedas: frontais, laterais (Direito e Esquerdo), Costas. Já em relação as \ac{ADL}, ele apresentou um número maior de atividades, incluindo andar e correr. 
+Entretanto em comparação com \cite{hsieh2014wrist}, este trabalho apresentou uma \textit{sensibilidade} $5.94\%$ menor e uma \textit{especificidade} $3,3\%$ maior. Os experimentos realizados por \cite{hsieh2014wrist} foram em uma superfície acolchoada mais fina que um colchão convencional, o que leva a uma aceleração maior no impacto, diminuindo o número de falsos negativos no experimento realizado. Em relação ao tipos de quedas realizados, tanto este, quanto o trabalho proposto por \cite{hsieh2014wrist} apresentaram quatro tipos de quedas: frontais, laterais (Direito e Esquerdo), Costas. Já em relação as \ac{AD}, ele apresentou um número maior de atividades, incluindo andar e correr.
 
 
 

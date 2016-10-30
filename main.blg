@@ -6,60 +6,68 @@ A level-1 auxiliary file: chapters/fall_systems/fall_systems.aux
 A level-1 auxiliary file: chapters/wearable/wearable.aux
 A level-1 auxiliary file: chapters/proposta/proposta.aux
 A level-1 auxiliary file: chapters/avaliacao/avaliacao.aux
+A level-1 auxiliary file: chapters/conclusion/conclusion.aux
 The style file: natbib.bst
 Database file #1: references.bib
-Repeated entry---line 319 of file references.bib
+Repeated entry---line 359 of file references.bib
  : @article{mubashir2013survey
  :                            ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "JSON;16"
-Warning--I didn't find a database entry for "parra2013"
-Warning--I didn't find a database entry for "Bogers:2009"
-Warning--I didn't find a database entry for "Manning:2008:IIR:1394399"
-Warning--I didn't find a database entry for "Herlocker:2004:ECF:963770.963772"
-Warning--I didn't find a database entry for "Deshpande:2004:ITN:963770.963776"
-Warning--I didn't find a database entry for "hanley1982mau"
-Warning--I didn't find a database entry for "DBLP:journals/corr/abs-1202-1112"
-Warning--I didn't find a database entry for "zhou2009predicting"
-You've used 39 entries,
+Too many commas in name 1 of "Casilari, Eduardo e Luque, Rafael e Mor{\'o}n, Mar{\'\i}a-Jos{\'e}" for entry casilari2015analysis
+while executing---line 2413 of file natbib.bst
+Too many commas in name 1 of "Casilari, Eduardo e Luque, Rafael e Mor{\'o}n, Mar{\'\i}a-Jos{\'e}" for entry casilari2015analysis
+while executing---line 2413 of file natbib.bst
+Too many commas in name 1 of "Sposaro, Frank, Tyson, Gary" for entry sposaro2009ifall
+while executing---line 2413 of file natbib.bst
+Too many commas in name 1 of "Sposaro, Frank, Tyson, Gary" for entry sposaro2009ifall
+while executing---line 2413 of file natbib.bst
+Too many commas in name 1 of "Casilari, Eduardo e Luque, Rafael e Mor{\'o}n, Mar{\'\i}a-Jos{\'e}" for entry casilari2015analysis
+while executing---line 2557 of file natbib.bst
+Too many commas in name 1 of "Casilari, Eduardo e Luque, Rafael e Mor{\'o}n, Mar{\'\i}a-Jos{\'e}" for entry casilari2015analysis
+while executing---line 2557 of file natbib.bst
+Too many commas in name 1 of "Sposaro, Frank, Tyson, Gary" for entry sposaro2009ifall
+while executing---line 2557 of file natbib.bst
+Too many commas in name 1 of "Sposaro, Frank, Tyson, Gary" for entry sposaro2009ifall
+while executing---line 2557 of file natbib.bst
+You've used 43 entries,
             2378 wiz_defined-function locations,
-            776 strings with 12071 characters,
-and the built_in function-call counts, 19055 in all, are:
-= -- 1967
-> -- 943
-< -- 30
-+ -- 283
-- -- 271
-* -- 1562
-:= -- 3240
-add.period$ -- 187
-call.type$ -- 39
-change.case$ -- 238
-chr.to.int$ -- 37
-cite$ -- 39
-duplicate$ -- 818
-empty$ -- 1230
-format.name$ -- 320
-if$ -- 3898
-int.to.chr$ -- 3
+            792 strings with 12626 characters,
+and the built_in function-call counts, 20310 in all, are:
+= -- 2100
+> -- 950
+< -- 36
++ -- 289
+- -- 274
+* -- 1638
+:= -- 3480
+add.period$ -- 202
+call.type$ -- 43
+change.case$ -- 257
+chr.to.int$ -- 40
+cite$ -- 43
+duplicate$ -- 883
+empty$ -- 1336
+format.name$ -- 319
+if$ -- 4137
+int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 30
-newline$ -- 208
-num.names$ -- 156
-pop$ -- 266
+missing$ -- 34
+newline$ -- 229
+num.names$ -- 172
+pop$ -- 278
 preamble$ -- 1
-purify$ -- 239
+purify$ -- 259
 quote$ -- 0
-skip$ -- 583
+skip$ -- 623
 stack$ -- 0
-substring$ -- 1199
-swap$ -- 208
-text.length$ -- 12
+substring$ -- 1300
+swap$ -- 219
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 345
+type$ -- 378
 warning$ -- 0
-while$ -- 175
+while$ -- 191
 width$ -- 0
-write$ -- 528
-(There was 1 error message)
+write$ -- 582
+(There were 9 error messages)
