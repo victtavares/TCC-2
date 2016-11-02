@@ -186,6 +186,15 @@ Mehner, S., Klauck, R., and Koenig, H. (2013).
 \newblock In {\em Proceedings of the 6th International Conference on PErvasive
   Technologies Related to Assistive Environments\/}, page~11. ACM.
 
+\bibitem[Mellone {\em et~al.}(2012)Mellone, Tacconi, Schwickert, Klenk, Becker,
+  and Chiari]{mellone2012smartphone}
+Mellone, S., Tacconi, C., Schwickert, L., Klenk, J., Becker, C., and Chiari, L.
+  (2012).
+\newblock Smartphone-based solutions for fall detection and prevention: the
+  farseeing approach.
+\newblock {\em Zeitschrift f{\"u}r Gerontologie und Geriatrie\/}, {\bf 45}(8),
+  722--727.
+
 \bibitem[Milette(2012)Milette]{milette2012professional}
 Milette, Greg e~Stroud, A. (2012).
 \newblock {\em Professional Android sensor programming\/}.
@@ -202,6 +211,12 @@ Motorola (2016).
 Mubashir, M., Shao, L., and Seed, L. (2013).
 \newblock A survey on fall detection: Principles and approaches.
 \newblock {\em Neurocomputing\/}, {\bf 100}, 144--152.
+
+\bibitem[{Nações Unidas}(2013){Nações Unidas}]{unPopulation:13}
+{Nações Unidas} (2013).
+\newblock World population ageing 2013.
+\newblock Report, The Department of Economic and Social Affairs of the United
+  Nations.
 
 \bibitem[{Portal Brasil}(2012){Portal Brasil}]{portalBrasilQuedas:12}
 {Portal Brasil} (2012).
@@ -240,12 +255,6 @@ Stephen R.~Lord, C. S. e. H. B.~M. (2001).
 \newblock {\em Falls in older people: risk factors and strategies for
   prevention\/}.
 \newblock Cambridge University Press, Cambridge.
-
-\bibitem[{United Nations}(2013){United Nations}]{unPopulation:13}
-{United Nations} (2013).
-\newblock World population ageing 2013.
-\newblock Report, The Department of Economic and Social Affairs of the United
-  Nations.
 
 \bibitem[Wild {\em et~al.}(1981)Wild, Nayak, and Isaacs]{wild1981dangerous}
 Wild, D., Nayak, U., and Isaacs, B. (1981).

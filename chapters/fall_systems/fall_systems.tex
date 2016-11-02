@@ -1,17 +1,19 @@
 \chapter{Sistemas de Detecção de Queda}
 \label{cap:sistemasRecomendacao}
 
-Um \ac{SDQ}, pode ser descrito como um dispositivo de apoio, cujo principal objetivo é alertar o usuário em um evento de queda \citep{igual2013challenges}. De forma geral, estes sistemas são capazes de distinguir \ac{AD}  de um evento de queda. Este tipo de sistema pode ser desenvolvido de diversas formas e pode estar tanto embarcado em um dispositivo vestível como um smartwatch , se basear em um sistema de monitoramento utilizando câmeras ou através de sensores posicionados ao redor de um ambiente selecionado. 
+Um \ac{SDQ} é um dispositivo de apoio capaz de distinguir \ac{AD}  de um evento de queda, onde muitos deles são capazes de emitir um alerta ao detectar uma queda. Este tipo de sistema pode ser desenvolvido de diversas formas e pode estar tanto embarcado em um dispositivo vestível como um smartwatch, se basear em um sistema de monitoramento utilizando câmeras ou através de sensores posicionados ao redor de um ambiente selecionado. 
 
-Com o uso de sistemas de detecção de quedas é possível que o usuário tenha o seu medo de cair reduzido, e dependendo da solução que foi desenvolvida, possa ser socorrido de maneira muito mais rápida, caso necessário. Um indivíduo que já sofreu uma queda, pode desenvolver uma sindrome chamada \ac{FOF}, que pode levar a perda da capacidade de realizar atividades rotineiras, como passear em um parque, ou assistir um filme em família \citep{legters2002fear}.
 
-As seções desse capítulo são organizadas da seguinte maneira: A Seção \ref{sec:fall_definition} define o conceito de quedas e expõe os diversos estados da mesma; A Seção \ref{sec:fds_types} irá demonstrar os três diferentes tipos de sistemas de detecção quedas mais populares.
+Um indivíduo que já sofreu uma queda, pode desenvolver uma síndrome chamada \ac{FOF}, que pode levar a perda da capacidade de realizar atividades rotineiras, como passear em um parque, ou assistir um filme em família \citep{legters2002fear}. O uso de sistemas de detecção de quedas podem fazer com que o usuários e sinta mais seguro, e dependendo da solução que foi desenvolvida, possa ser socorrido de maneira muito mais rápida, caso necessário. 
+
+
+As seções desse capítulo são organizadas da seguinte maneira: A Seção \ref{sec:fall_definition} define o conceito de quedas e expõe os diversos estados da mesma; A Seção \ref{sec:fds_types} demonstra os três diferentes tipos de sistemas de detecção quedas mais populares.
 
 
 
 \section{Definição de Queda}
 \label{sec:fall_definition}
-De forma geral, podemos definir uma queda como um evento súbito e involuntário, onde o indivíduo de uma posição em pé ou sentado, passa a ocupar uma posição integral ou parcialmente deitada  \citep{igual2013challenges}. Uma outra definição mais formal de queda descreveu este evento como "Vir ao chão ou algum nível mais baixo, sem a intenção, como consequência de um golpe violento, perda de consciência, ou início súbito de paralisia, como no caso de um acidente vascular cerebral ou um ataque epiléptico" \citep{gibson1987prevention}. Quando analisamos uma queda através da aceleração do movimento, ela pode ser dividida em etapas descritas na imagem \ref{fig:fall_states}. Estas 4 etapas são as seguintes:
+De forma geral, podemos definir uma queda como um evento súbito e involuntário, onde o indivíduo de uma posição em pé ou sentado, passa a ocupar uma posição integral ou parcialmente deitada  \citep{igual2013challenges}. Uma outra definição mais formal de queda descreveu este evento como "Vir ao chão ou algum nível mais baixo, sem a intenção, como consequência de um golpe violento, perda de consciência, ou início súbito de paralisia, como no caso de um acidente vascular cerebral ou um ataque epiléptico" \citep{gibson1987prevention}. Quando analisamos uma queda através da aceleração do movimento de um dispositivo localizado no pulso do usuário, ela pode ser dividida em etapas descritas na imagem \ref{fig:fall_states}. Estas 4 etapas são as seguintes:
 
 
 \begin{figure}[ht]
@@ -36,6 +38,7 @@ De forma geral, podemos definir uma queda como um evento súbito e involuntário
 \end{enumerate}
 
 
+
 \section{Tipos de Sistemas de Detecção de Queda}
 \label{sec:fds_types}
 Diversos tipos de Sistemas de Detecção de Queda foram desenvolvidos nos últimos anos e estes utilizam diferentes abordagens buscando atingir o mesmo objetivo: realizar a detecção automática das quedas. De acordo com \cite{mubashir2013survey}, estes sistemas podem ser categorizados em três grupos: sistemas de detecção baseados no ambiente, sistemas de detecção baseados na visão, sistemas de detecção baseados em tecnologias vestíveis.
@@ -52,10 +55,10 @@ Sistemas de detecção baseados no ambiente utilizam a fusão de dados obtidos d
 
 
 \subsection{Sistemas de Detecção Baseados na Visão}
-Sistemas de detecção baseados na visão utilizam uma ou mais câmeras posicionadas ao redor do ambiente desejado para  que se possa realizar a detecção de quedas. As câmeras são consideradas um meio menos intrusivo de detecção, pois, diferente dos sistemas que utilizam tecnologias vestíveis, somente o vídeo gerado pela câmera são utilizadas na detecção, sem a necessidade do usuário vestir nenhum dispositivo eletrônico. Diferentes tipos de técnicas de processamento de vídeo e imagem são utilizadas na detecção. As principais delas são:  
+Sistemas de detecção baseados na visão utilizam uma ou mais câmeras posicionadas ao redor do ambiente desejado para  que se possa realizar a detecção de quedas.  As câmeras são consideradas um meio menos intrusivo de detecção, pois, diferente dos sistemas que utilizam tecnologias vestíveis, somente o vídeo gerado pela câmera são utilizadas na detecção, sem a necessidade do usuário vestir nenhum dispositivo eletrônico. Diferentes tipos de técnicas de processamento de vídeo e imagem são utilizadas na detecção. As principais delas são:  
 
 \begin{itemize}
-	\item{\textbf{Espaço-Temporais}: Sistemas que utilizam características espaço-temporais para realizar modelagens capazes de fornecer dados cruciais na detecção de diferentes tipos de atividades.  Um sistema proposto por \cite{foroughi2008eigenspace} realiza a extração de informações de movimento de uma sequência de vídeo. Aplicando uma técnica chamada Eigenspace sobre as informações de movimento coletadas, é possível extrair um vetor de características, que  é utilizado por um algoritmo de inteligência artificial, mais especificamente um algoritmo de redes neurais, para determinar o tipo de evento ocorrido. }
+	\item{\textbf{Espaço-Temporais}: Sistemas que utilizam características espaço-temporais para realizar modelagens capazes de fornecer dados cruciais na detecção de diferentes tipos de atividades.  Um sistema proposto por \cite{foroughi2008eigenspace} realiza a extração de informações de movimento de uma sequência de vídeo. Aplicando uma técnica chamada de Subespaço Próprio (Eigenspace en inglês), sobre as informações de movimento coletadas, é possível extrair um vetor de características, que  é utilizado por um algoritmo de inteligência artificial, mais especificamente um algoritmo de redes neurais artificiais, para determinar o tipo de evento ocorrido. }
 	
 	\item{\textbf{Inatividade/Mudança de Forma}: Sistemas que utilizam mudanças de forma e ausência de atividade no monitoramento em vídeo para realizar a detecção de quedas. Um exemplo deste tipo de sistema foi proposto por \cite{rougier2011robust}. Em seu artigo, são utilizadas técnicas de detecção e análise de formas para detectar a silhueta e atividade (representado por mudanças de forma) do indivíduo que está sendo monitorado. Para que se possa diferenciar quedas das atividades diárias, é utilizado o método de \textit{Mistura de Modelos Gaussianos}, um método estatístico utilizado em visão computacional.}
 	
@@ -64,16 +67,16 @@ Sistemas de detecção baseados na visão utilizam uma ou mais câmeras posicion
 	\item{\textbf{Análise 3D da Posição da Cabeça}: Sistemas que realizam o monitoramento da cabeça do indivíduo, e através de modelos de estado é capaz de detectar as magnitudes do movimento realizado. Um exemplo deste tipo de sistema foi proposto por \cite{rougier2005demo}. Ele realiza a modelagem 3D da cabeça do indivíduo e é capaz de calcular a velocidade e a trajetória deste modelo que são posteriormente utilizadas na categorização do evento como queda.}	
 \end{itemize}
 
-
+Diferente dos Sistemas de Detecção Baseados no Ambiente que utiliza diversos sensores espalhados no ambiente para realizar a detecção de quedas, este tipo de sistema utiliza somente as imagens e videos proveniente das câmeras.
 
 \subsection{Sistemas de Detecção Baseados em Tecnologias Vestíveis}
-Sistemas vestíveis de detecção de quedas utilizam os dados de sensores que estão acoplados sobre ou na roupa dos usuários. Este tipo de sistema apresentam claras vantagens sobre tanto os sistemas baseados no ambiente ou na visão. Ambos os tipos de sistema, exigem um custo constante de manuntenção, que dependendo de como o sistema foi desenvolvido, pode ser bastante alto, além disso a área de atuação do sistema fica limitada a uma área pré-determinada (e.g quarto, sala de estar). Utilizando tecnologias véstiveis não temos este problema, pois o usuário poderá leva o seu dispositivo para onde ele desejar.
+Sistemas vestíveis de detecção de quedas utilizam os dados de sensores que estão acoplados sobre ou na roupa dos usuários. Este tipo de sistema apresentam claras vantagens sobre os sistemas baseados no ambiente ou na visão. Ambos os tipos de sistema, exigem um custo constante de manuntenção, que dependendo de como o sistema foi desenvolvido, pode ser bastante alto, além disso a área de atuação do sistema fica limitada a uma área pré-determinada (e.g quarto, sala de estar). Utilizando tecnologias véstiveis não temos esse problema, pois o usuário poderá levar o seu dispositivo para onde ele desejar.
 
 Levando em consideração a privacidade do usuário, os sistemas vestíveis levam vantagem em relação aos baseados no ambiente e na visão. A necessidade de uma monitoração por vídeo constante necessária em alguns desses sistemas podem deixar o usuário relutante em implementar está solução. 
 
-De acordo com \cite{igual2013challenges}, o uso de smartphones para realizar a detecção de quedas tem sido uma tendência devido ao seu baixo preço, altos volumes de produção e facilidade de desenvolvimento. O grande problema do uso do smartphone é justamente o seu posicionamento, para que este possa realizar a detecção de quedas, ele precisa está ligado diretamente ao corpo do usuário, se comportando como uma plataforma vestível, o que o smartphone não é em sua essência. Está incerteza dificulta bastante o uso deste tipo de dispositivo no reconhecimento de atividades. 
+De acordo com \cite{igual2013challenges}, o uso de smartphones para realizar a detecção de quedas tem sido uma tendência devido ao seu baixo preço, altos volumes de produção e facilidade de desenvolvimento. O grande problema do uso do smartphone é justamente o seu posicionamento, para que este possa realizar a detecção de quedas, ele precisa estar ligado diretamente ao corpo do usuário, comportando-se como uma plataforma vestível, o que o smartphone não é em sua essência. Essa incerteza dificulta bastante o uso deste tipo de dispositivo no reconhecimento de atividades. 
 
-Tentando resolver este problema, o uso de dispositivos realmente vestíveis vem sendo utilizado em sistemas de detecção de quedas, como pode ser visto nos trabalhos desenvolvidos por \cite{hsieh2014wrist} e \cite{degen2003speedy}. Estes trabalhos serão descrito com mais detalhes no capítulo \ref{cap:wearable_systems}, juntamente com mais detalhes de sistemas vestíveis de detecção de quedas.
+Tentando resolver este problema, o uso de dispositivos realmente vestíveis vem sendo utilizado em sistemas de detecção de quedas, como pode ser visto nos trabalhos desenvolvidos por \cite{hsieh2014wrist} e \cite{degen2003speedy}. Esses trabalhos serão descritos com mais detalhes no capítulo \ref{cap:wearable_systems}, juntamente com mais detalhes de sistemas vestíveis de detecção de quedas.
 
 
 

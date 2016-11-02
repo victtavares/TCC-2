@@ -1,8 +1,8 @@
 \select@language {brazil}
 \contentsline {chapter}{Lista de Figuras}{xv}{chapter*.4}
 \contentsline {chapter}{Lista de Tabelas}{xvii}{chapter*.5}
-\contentsline {chapter}{Lista de Acr\IeC {\^o}nimos}{xix}{chapter*.7}
-\contentsline {chapter}{Lista de C\IeC {\'o}digos Fonte}{xxi}{chapter*.8}
+\contentsline {chapter}{Lista de Acr\IeC {\^o}nimos}{xix}{chapter*.6}
+\contentsline {chapter}{Lista de C\IeC {\'o}digos Fonte}{xxi}{chapter*.7}
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Sistemas de Detec\IeC {\c c}\IeC {\~a}o de Queda}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Defini\IeC {\c c}\IeC {\~a}o de Queda}{5}{section.2.1}
@@ -21,20 +21,23 @@
 \contentsline {section}{\numberline {3.4}Trabalhos Relacionados}{17}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}SPEEDY - Detector de Quedas em um Rel\IeC {\'o}gio de Pulso}{17}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}F2D - Sistema de Detec\IeC {\c c}\IeC {\~a}o de Quedas}{18}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Sistema de Detec\IeC {\c c}\IeC {\~a}o de Quedas de Pulso}{19}{subsection.3.4.3}
-\contentsline {chapter}{\numberline {4}SafeWatch: Sistema de Detec\IeC {\c c}\IeC {\~a}o de Quedas}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Arquitetura}{21}{section.4.1}
-\contentsline {section}{\numberline {4.2}Ferramentas Utilizadas}{23}{section.4.2}
-\contentsline {section}{\numberline {4.3}Implementa\IeC {\c c}\IeC {\~a}o}{23}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Sensor Reader}{24}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Fall Detector}{24}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Watch Communicator}{32}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Fall Handler}{32}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Contact Manager}{33}{subsection.4.3.5}
-\contentsline {section}{\numberline {4.4}Telas e Funcionamento}{33}{section.4.4}
-\contentsline {chapter}{\numberline {5}Estudo Experimental}{39}{chapter.5}
-\contentsline {section}{\numberline {5.1}Metodologia}{39}{section.5.1}
-\contentsline {section}{\numberline {5.2}M\IeC {\'e}tricas de Avalia\IeC {\c c}\IeC {\~a}o}{41}{section.5.2}
-\contentsline {section}{\numberline {5.3}Resultados}{42}{section.5.3}
-\contentsline {chapter}{\numberline {6}Conclus\IeC {\~a}o}{45}{chapter.6}
-\contentsline {chapter}{Refer\IeC {\^e}ncias Bibliogr\IeC {\'a}ficas}{47}{Item.28}
+\contentsline {subsection}{\numberline {3.4.3}Sistema de Detec\IeC {\c c}\IeC {\~a}o de Quedas de Pulso}{20}{subsection.3.4.3}
+\contentsline {section}{\numberline {3.5}Sum\IeC {\'a}rio}{21}{section.3.5}
+\contentsline {chapter}{\numberline {4}SafeWatch: Sistema de Detec\IeC {\c c}\IeC {\~a}o de Quedas}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}Arquitetura}{23}{section.4.1}
+\contentsline {section}{\numberline {4.2}Ferramentas Utilizadas}{25}{section.4.2}
+\contentsline {section}{\numberline {4.3}Implementa\IeC {\c c}\IeC {\~a}o}{26}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Sensor Reader}{26}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Fall Detector}{27}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Watch Communicator}{29}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Fall Handler}{30}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Contact Manager}{31}{subsection.4.3.5}
+\contentsline {section}{\numberline {4.4}Sum\IeC {\'a}rio}{33}{section.4.4}
+\contentsline {chapter}{\numberline {5}Estudo Experimental}{35}{chapter.5}
+\contentsline {section}{\numberline {5.1}Metodologia}{35}{section.5.1}
+\contentsline {section}{\numberline {5.2}M\IeC {\'e}tricas de Avalia\IeC {\c c}\IeC {\~a}o}{38}{section.5.2}
+\contentsline {section}{\numberline {5.3}Resultados}{38}{section.5.3}
+\contentsline {chapter}{\numberline {6}Conclus\IeC {\~a}o}{41}{chapter.6}
+\contentsline {chapter}{Refer\IeC {\^e}ncias Bibliogr\IeC {\'a}ficas}{43}{Item.31}
+\contentsline {chapter}{Ap\IeC {\^e}ndice}{47}{section*.17}
+\contentsline {chapter}{\numberline {A}Algoritmo de Detec\IeC {\c c}\IeC {\~a}o de Quedas}{49}{appendix.A}

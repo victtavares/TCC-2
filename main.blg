@@ -8,6 +8,7 @@ A level-1 auxiliary file: chapters/proposta/proposta.aux
 A level-1 auxiliary file: chapters/avaliacao/avaliacao.aux
 A level-1 auxiliary file: chapters/conclusion/conclusion.aux
 The style file: natbib.bst
+A level-1 auxiliary file: appendix/appendix.aux
 Database file #1: references.bib
 Repeated entry---line 359 of file references.bib
  : @article{mubashir2013survey
@@ -29,45 +30,45 @@ Too many commas in name 1 of "Sposaro, Frank, Tyson, Gary" for entry sposaro2009
 while executing---line 2557 of file natbib.bst
 Too many commas in name 1 of "Sposaro, Frank, Tyson, Gary" for entry sposaro2009ifall
 while executing---line 2557 of file natbib.bst
-You've used 43 entries,
+You've used 44 entries,
             2378 wiz_defined-function locations,
-            792 strings with 12626 characters,
-and the built_in function-call counts, 20310 in all, are:
-= -- 2100
-> -- 950
+            800 strings with 12901 characters,
+and the built_in function-call counts, 20908 in all, are:
+= -- 2152
+> -- 996
 < -- 36
-+ -- 289
-- -- 274
-* -- 1638
-:= -- 3480
-add.period$ -- 202
-call.type$ -- 43
-change.case$ -- 257
-chr.to.int$ -- 40
-cite$ -- 43
-duplicate$ -- 883
-empty$ -- 1336
-format.name$ -- 319
-if$ -- 4137
++ -- 303
+- -- 288
+* -- 1703
+:= -- 3586
+add.period$ -- 207
+call.type$ -- 44
+change.case$ -- 263
+chr.to.int$ -- 41
+cite$ -- 44
+duplicate$ -- 903
+empty$ -- 1370
+format.name$ -- 334
+if$ -- 4251
 int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 34
-newline$ -- 229
-num.names$ -- 172
-pop$ -- 278
+missing$ -- 35
+newline$ -- 234
+num.names$ -- 176
+pop$ -- 284
 preamble$ -- 1
-purify$ -- 259
+purify$ -- 265
 quote$ -- 0
-skip$ -- 623
+skip$ -- 635
 stack$ -- 0
-substring$ -- 1300
-swap$ -- 219
+substring$ -- 1339
+swap$ -- 223
 text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 378
+type$ -- 387
 warning$ -- 0
-while$ -- 191
+while$ -- 196
 width$ -- 0
-write$ -- 582
+write$ -- 595
 (There were 9 error messages)

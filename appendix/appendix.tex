@@ -1,0 +1,160 @@
+\chapter{Algoritmo de Detecção de Quedas}
+\label{ap:algorithm}
+
+
+ \begin{lstlisting}[caption=Algoritmo de Detecção de Quedas em Java, label=cod:java, language=JAVA, frame=single, breaklines=true]
+ package com.victortavares.safewatch.Models;
+ 
+ import android.content.Context;
+ import android.os.Handler;
+ import android.util.Log;
+ 
+ import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
+ 
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+ /**
+ * Created by Victor Tavares on 7/14/16.
+ */
+ public class FallDetector implements SensorCommunicator {
+ 
+ private AccelerometerReader accelerometerReader;
+ private static final String TAG = "FALL_DETECTOR";
+ private Boolean detectingFall = false;
+ 
+ //gravity Constants
+ private static float gravity = 9.81f;
+ private static float gravity6G = gravity *6f;
+ private static float gravity1AndHalfG = gravity * 1.5f;
+ private static float gravity200G = gravity *200f;
+ 
+ 
+ private static FallDetectorCommunicator fallObserver;
+ 
+ 
+ public FallDetector(FallDetectorCommunicator fallObserver) {
+ accelerometerReader = new AccelerometerReader(this);
+ this.fallObserver = fallObserver;
+ }
+ 
+ public void startMonitoring(Context  c) {
+ accelerometerReader.startMonitoring(c);
+ }
+ 
+ 
+ public void accelerometerAboveLimit(SensorBase accelerometerMeasurement) {
+ 
+ if (detectingFall) return;
+ 
+ Log.i(TAG, "Possible Fall. accelerometerData: " + accelerometerMeasurement.getSpeed()/gravity + " at " + accelerometerMeasurement.getDate() + " on " + accelerometerMeasurement.getTimestamp());
+ analyseData(accelerometerMeasurement.getTimestamp());
+ }
+ 
+ 
+ private  void analyseData(final long timeOfOcurrence) {
+ detectingFall = true;
+ accelerometerReader.setTriggered(true);
+ 
+ 
+ Handler handler = new Handler();
+ handler.postDelayed(new Runnable() {
+ 
+ @Override
+ public void run() {
+ SensorBase maxSpeedGatheringAfter4Seconds = new SensorBase(0f,0f,0f, (long) 0);
+ DescriptiveStatistics statsCalculation = new DescriptiveStatistics();
+ Float SMAAfter2Seconds = 0f;
+ 
+ 
+ //checking 0.4 seconds after the accelerometer indicator
+ for (SensorBase currentSensor : accelerometerReader.getlTrigerredAccelerometerData()) {
+ float timeBetweenFallAndDetection = (currentSensor.getTimestamp() - timeOfOcurrence);
+ //Log.i(TAG, "Collecting max speed:" + currentSensor.getSpeed() + " at " + currentSensor.getDate() + " on " + currentSensor.getTimestamp() );
+ //getting the max value of occurrence 0.4 seconds after the fall
+ if (timeBetweenFallAndDetection <= 400 && currentSensor.getSpeed() > maxSpeedGatheringAfter4Seconds.getSpeed()) {
+ maxSpeedGatheringAfter4Seconds = currentSensor;
+ }
+ }
+ 
+ 
+ //Log.i(TAG, "-------------------------\n");
+ 
+ //getting 0.4 seconds before and after the max value of speed.
+ List<SensorBase> combinedValues = accelerometerReader.getlDefaultAccelerometerData();
+ combinedValues.addAll(accelerometerReader.getlTrigerredAccelerometerData());
+ //Log.i(TAG, "value of pick:" + maxSpeedGatheringAfter4Seconds.getSpeed()/gravity + " at " + maxSpeedGatheringAfter4Seconds.getDate() + " on " + maxSpeedGatheringAfter4Seconds.getTimestamp());
+ for (SensorBase currentSensor : combinedValues) {
+ 
+ float timeBetweenPickAndCurrentSensor = currentSensor.getTimestamp() - maxSpeedGatheringAfter4Seconds.getTimestamp();
+ 
+ if (timeBetweenPickAndCurrentSensor >= -400 && timeBetweenPickAndCurrentSensor <= 400) {
+ //Log.i(TAG, "Adding value to stats calculation:" + currentSensor.getSpeed() + " at " + currentSensor.getDate() + " on " + currentSensor.getTimestamp() );
+ statsCalculation.addValue(currentSensor.getSpeed());
+ }
+ }
+ 
+ 
+ Log.i(TAG, "-------------------------\n");
+ 
+ //getting 2 seconds after the max value of speed, ignoring the max value
+ for (SensorBase currentSensor : accelerometerReader.getlTrigerredAccelerometerData()) {
+ float timeBetweenPickAndCurrentSensor = currentSensor.getTimestamp() - maxSpeedGatheringAfter4Seconds.getTimestamp();
+ 
+ if (timeBetweenPickAndCurrentSensor <= 2000 && timeBetweenPickAndCurrentSensor > 0) {
+ //Log.i(TAG, "Adding value to SMA calculation:" + currentSensor.getSpeed() + " at " + currentSensor.getDate() + " on " + currentSensor.getTimestamp() );
+ SMAAfter2Seconds += currentSensor.getSmaSum();
+ }
+ }
+ 
+ 
+ //Log.i(TAG, "-------------------------\n");
+ 
+ //Detection algorithm
+ //checking 0.4 seconds after the gathering is bigger than 6G
+ if (maxSpeedGatheringAfter4Seconds.getSpeed() > gravity6G) {
+ Log.i(TAG, "Fall detected on maxValue:" + (maxSpeedGatheringAfter4Seconds.getSpeed()/gravity) + "G");
+ } else {
+ Log.i(TAG, "Not Fall(maxValue4Seconds):" + (maxSpeedGatheringAfter4Seconds.getSpeed()/gravity) + "G");
+ finishDataAnalysis();
+ return;
+ }
+ 
+ 
+ //standard deviation 0.4 seconds before and after the  maxSpeedGatheringAfter4Seconds is higher than 1.5G
+ Double standardDeviation = statsCalculation.getStandardDeviation();
+ if (standardDeviation > gravity1AndHalfG) {
+ Log.i(TAG, "Fall detected on standard deviation:" + (standardDeviation/gravity) + "G");
+ } else {
+ Log.i(TAG, "Not Fall (standardDeviation): " + (standardDeviation/gravity) + "G");
+ finishDataAnalysis();
+ return;
+ }
+ 
+ //SMA value above 2 seconds is below 200G
+ if (SMAAfter2Seconds < gravity200G) {
+ Log.i(TAG, "Fall detected on SMA:" + (SMAAfter2Seconds/gravity) + "G");
+ } else {
+ Log.i(TAG, "Not Fall detected on SMA:" + (SMAAfter2Seconds/gravity) + "G");
+ finishDataAnalysis();
+ return;
+ 
+ }
+ 
+ fallObserver.fallDetected(combinedValues);
+ finishDataAnalysis();
+ }
+ 
+ 
+ }, 2400);
+ 
+ }
+ 
+ private void finishDataAnalysis() {
+ accelerometerReader.setTriggered(false);
+ detectingFall = false;
+ }
+ 
+ }
+ 
+ \end{lstlisting}

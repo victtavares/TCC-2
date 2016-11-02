@@ -3,20 +3,20 @@
 
 Sistemas Vestíveis podem ser definidos como dispositivos eletrônicos móveis que podem ser discretamente embutidos nos trajes do usuário, como parte da roupa ou um acessório. Diferente dos sistemas móveis convencionais, eles podem funcionar sem ou com muito pouca interferência nas atividades do usuário \citep{lukowicz2004wearable}. 
 
-Hoje, muitos destes dispositivos vestíveis vem com uma gama de sensores embutidos que são utilizados na detecção de quedas. O tipo de sensor mais comum utilizado em \ac{SDQ} é o acelerômetro, com alguns desses sistemas também utilizando o giroscópio como um sensor auxiliar. De acordo com a revisão sistemática feito por \cite{igual2013challenges}, 186 dos 197 sistemas analisados utilizam o acelerômetro como sensor principal na detecção de quedas. A utilização desses sensores em \ac{SDQ} se deve muito pela popularização e o barateamento dos mesmos, além da utilização desses sensores embarcados em smartphones e smartwatches.
+Hoje, muitos destes dispositivos vestíveis vêm com uma gama de sensores embutidos que são utilizados na detecção de quedas. O tipo de sensor mais comum utilizado em \ac{SDQ} é o acelerômetro, com alguns desses sistemas também utilizando o giroscópio como um sensor auxiliar. De acordo com a revisão sistemática feito por \cite{igual2013challenges}, 186 dos 197 trabalhos analisados utilizam o acelerômetro como sensor principal na detecção de quedas. A utilização desses sensores em \ac{SDQ} se deve muito pela popularização e o barateamento dos mesmos, além da utilização desses sensores embarcados em smartphones e smartwatches.
 
 
-As seções desse capítulo são organizadas da seguinte maneira: A seção \ref{sec:sensors} descreve os principais tipos de sensores utilizados em \ac{SDQ}; A \ref{sec:sensor_position} fala sobre o posicionamento de sensores, fazendo uma correlação entre o posiciomanento dos sensores e a accurâcia dos sistemas estudados; A seção \ref{sec: FDS_algorithm} fala sobre os diferentes tipos de algoritmos de detecção de quedas mostrando suas vantagens e desvantagens; Por fim, a seção \ref{sec:FDS_examples} irá mostrar exemplos de aplicações que realizam a detecção de quedas atravês de tecnologias vestíveis. 
+As seções desse capítulo são organizadas da seguinte maneira: A seção \ref{sec:sensors} descreve os principais tipos de sensores utilizados em \ac{SDQ}; A \ref{sec:sensor_position} fala sobre o posicionamento de sensores, fazendo uma correlação entre o posiciomanento dos sensores e a acurácia dos sistemas estudados; A seção \ref{sec: FDS_algorithm} fala sobre os diferentes tipos de algoritmos de detecção de quedas mostrando suas vantagens e desvantagens; Por fim, a seção \ref{sec:FDS_examples} apresenta exemplos de aplicações que realizam a detecção de quedas através de tecnologias vestíveis.
 
 
 
 \section{Sensores}
 \label{sec:sensors}
-A escolha e o bom funcionamento de sensores são uma parte essencial em sistemas de detecção de quedas. De forma geral, sensores são dispositivos que convertem fenômenos físicos em sinais elétricos. Sendo assim , eles representam a camada de comunicação entre o mundo físico e o mundo digital. 
+A escolha e o bom funcionamento de sensores são uma parte essencial em sistemas de detecção de quedas. De forma geral, sensores são dispositivos que convertem fenômenos físicos em sinais elétricos. Sendo assim, eles representam a camada de comunicação entre o mundo físico e o mundo digital. 
 
-Os dois tipos principais de sensores utilizados em sistemas de detecção de queda são o acelerômetro e o giroscópio. Eles fazem parte de um grupo chamado de \ac{MEMS}. Estes sensores são geralmente feitos de chips de silício utilizando as mesmas técnicas usadas na confecção de chips de computadores pessoais. Para que um sensor possa ser classificado como \ac{MEMS} alguma parte do seu design precisa vibrar ou se mover de alguma forma \citep{milette2012professional}. 
+Os dois tipos principais de sensores utilizados em sistemas de detecção de queda são o acelerômetro e o giroscópio. Eles fazem parte de um grupo chamado de \ac{MEMS}. Esses sensores são geralmente feitos de chips de silício utilizando as mesmas técnicas usadas na confecção de chips de computadores pessoais. Para que um sensor possa ser classificado como \ac{MEMS} alguma parte do seu design precisa vibrar ou se mover de alguma forma \citep{milette2012professional}. 
 
-De forma geral, tanto o acelerômetro quanto o giroscópio utilizam três eixos para expressar seus valores. O sistema de coordenadas utilizado é relativo a cada dispositivo. Na Figura \ref{fig:axis_device} temos um exemplo do sistema de coordenadas utilizado pelo sistema operacional Android\footnote{https://www.android.com/}. Neste sistema o ponto de origem é o centro da tela do dispositivo, quando segurado na posição vertical \citep{sensorAndroidDocs}. 
+De forma geral, tanto o acelerômetro quanto o giroscópio utilizam três eixos para expressar seus valores. O sistema de coordenadas utilizado é relativo a cada dispositivo. Na Figura \ref{fig:axis_device}, temos um exemplo do sistema de coordenadas utilizado pelo sistema operacional Android\footnote{https://www.android.com/}. Neste sistema o ponto de origem é o centro da tela do dispositivo \citep{sensorAndroidDocs}. 
 
 \begin{figure}[ht]
 	\centering
@@ -42,9 +42,9 @@ Na Figura \ref{fig:acelerometro} em A é possível ver um aparelho parado em uma
 
 \subsection{Giroscópio}
 	
-	O giroscópio, similarmente aos acelerômetros, são pequenas massas em pequenas molas, só que em vez de medir a aceleração, são utilizados para medir um tipo de força chamada de Força de Coriolis. A Força de Coriolis é a tendência que um objeto livre possui de sair do curso quando visto de um ponto de referência em rotação \citep{milette2012professional}. Por exemplo, se sentarmos em um carrossel e rolarmos uma bola pra longe, a bola irá parecer desviar em uma linha reta, como se existisse uma força agindo sobre ela. Esta força é chamada de Força de Coriolis.
+	O giroscópio, similarmente aos acelerômetros, são pequenas massas em pequenas molas, só que em vez de medir a aceleração, são utilizados para medir um tipo de força chamada de Força de Coriolis. A Força de Coriolis é a tendência que um objeto livre possui de sair do curso quando visto de um ponto de referência em rotação \citep{milette2012professional}. Por exemplo, se sentarmos em um carrossel e rolarmos uma bola pra longe, a bola irá parecer desviar em uma linha reta, como se existisse uma força agindo sobre ela. Essa força é chamada de Força de Coriolis.
 	
-	Apesar de possuir uma estrutura física semelhante, o acelerómetro e o giroscópio se diferem em seu funcionamento. Em vez de esperar a força da gravidade agir sobre a massa, o giroscópio funciona vibrando esta massa sobre o eixo definido. Quando o giroscópio é rotacionado, a Força de Coriolis faz com que a massa comece a ser mover em um eixo diferente no qual ele estava vibrando anteriormente.  \cite{milette2012professional}.
+	Apesar de possuir uma estrutura física semelhante, o acelerômetro e o giroscópio se diferem em seu funcionamento. Em vez de esperar a força da gravidade agir sobre a massa, o giroscópio funciona vibrando esta massa sobre o eixo definido. Quando o giroscópio é rotacionado, a Força de Coriolis faz com que a massa comece a ser mover em um eixo diferente no qual ele estava vibrando anteriormente \cite{milette2012professional}.
 	
 	Como a Força de Coriolis age somente quando o dispositivo está em rotação, o giroscópio só é capaz de calcular a velocidade angular, ou seja, a velocidade com que o aparelho está sendo rotacionado. 
 	
@@ -58,25 +58,25 @@ O posicionamento dos sensores afeta diretamente a performance dos \ac{SDQ}, depe
 Não existe um consenso sobre a posição otimizada dos sensores para que se possa realizar a detecção de quedas. De acordo com \cite{abbate2011recognition}, a cintura seria o local ideal para o posicionamento, já que estaria mais perto do centro de gravidade do corpo humano. Entretanto em \cite{kangas2007determination}, já foi sugerido que a cabeça seria o melhor lugar para posicionar os sensores. Outras soluções, como em \cite{gjoreski2011accelerometer}, já propõem o uso de mais de um sensor, colocando-os em diferentes partes do corpo com o objetivo de aumentar ainda mais a precisão dos \ac{SDQ}.
 
 
-De acordo com \cite{casilari2015analysis}, o pulso não é o local recomendado para o posicionamento de sensores em sistemas de detecção de quedas. Isso se deve a constante movimentação dos braços, que podem gerar um número grande de falso-positivos. Entretanto, alguns sistemas tem conseguido resultados satisfatórios com \ac{SDQ} localizados no pulso. O sistema proposto por \cite{hsieh2014wrist}, foi capaz detectar quedas em 151 das 160 quedas simuladas e obteve uma especificidade (capacidade de não reconhecer eventos de quedas, como tal) de 95\%.
+De acordo com \cite{casilari2015analysis}, o pulso não é o local recomendado para o posicionamento de sensores em sistemas de detecção de quedas. Isso se deve à constante movimentação dos braços, que podem gerar um número grande de falso-positivos. Entretanto, alguns sistemas têm conseguido resultados satisfatórios com \ac{SDQ} localizados no pulso. O sistema proposto por \cite{hsieh2014wrist}, foi capaz detectar quedas em 151 das 160 quedas simuladas e obteve uma especificidade (proporção de eventos \ac{AD} corretamente identificadas) de 95\%.
 
 Além da performance do sistema, outras questões precisam ser levadas em consideração quando pensamos no posicionamento dos sensores. Uma delas é a danificação dos sensores na ocorrência de uma queda. Caso o sistema pare de funcionar, um possível alerta de emergência poderá não ser enviado e o idoso poderá estar correndo grande perigo. 
 
-Outra questão é a usabilidade, o uso de muitos sensores, apesar de poder elevar a precisão do sistema, poderá levar a um desconforto do usuário, que pode fazer até com que o mesmo desista de usá-lo. 
+Outra questão é a usabilidade. O uso de muitos sensores, apesar de poder elevar a precisão do sistema, poderá levar a um desconforto do usuário, que pode fazer até com que o mesmo desista de usá-lo. 
 
 
 \section{Algoritmos de Detecção de Queda}
 \label{sec: FDS_algorithm}
-Os algoritmos de detecção de quedas recebem como entrada os dados obtidos através dos sensores e são capazes de determinar se o que ocorreu foi um evento de queda ou somente uma \ac{AD}. De acordo com \cite{casilari2015analysis}, é possível separar os algoritmos de detecção em dois grandes grupos: Algoritmos de detecção através de métodos de reconhecimento de padrões e algoritmos baseados em limiares. 
+Os algoritmos de detecção de quedas recebem como entrada os dados obtidos através dos sensores e são capazes de determinar se o que ocorreu foi um evento de queda ou somente uma \ac{AD}. De acordo com \cite{casilari2015analysis}, é possível separar os algoritmos de detecção em dois grandes grupos: algoritmos de detecção através de métodos de reconhecimento de padrões e algoritmos baseados em limiares. 
 
 
 \subsection{Reconhecimento de Padrões}
-O reconhecimento de padrões é uma área do aprendizado de máquina que foca no reconhecimento de padrões e regularidades de dados \citep{anzai2012pattern}. Diversas técnicas de aprendizado de máquina tem sido empregadas na detecção de quedas, de acordo com a revisão sistemática feita por \cite{casilari2015analysis}, algoritmos como o de \textit{Naïve Bayes}, \textit{Redes Neurais}, e \textit{Árvores de Decisão} tem sido utilizados.
+O reconhecimento de padrões é uma área do aprendizado de máquina que foca no reconhecimento de padrões e regularidades de dados \citep{anzai2012pattern}. Diversas técnicas de aprendizado de máquina têm sido empregadas na detecção de quedas, de acordo com a revisão sistemática feita por \cite{casilari2015analysis}, algoritmos como o de \textit{Naïve Bayes}, \textit{Redes Neurais}, e \textit{Árvores de Decisão} têm sido utilizados.
 
 
 Um exemplo de sistema que utiliza a técnica de reconhecimento de padrões foi proposto por \cite{zhao2012fallalarm}. O seu algoritmo de detecção de quedas analisa dados do acelerômetro através de uma árvore de decisão, assim identificando um evento de queda. 
 
-Este algoritmo é composto de 2 fases, a primeira é o que chamamos em aprendizado de máquina de fase de treinamento. Será realizado a coleta de dado e a  extração das características que são pertinentes, além do treinamento de um modelo de árvore de decisão. Na figura \ref{fig:decision_tree} podemos ver o modelo de árvore de decisão gerado.  Este modelo de árvore de decisão é capaz de reconhecer atividades como andar, correr, estado estático ou um evento de queda através das variáveis \textit{Std\_x}, \textit{Mean\_y} e \textit{Slope} que representam caracteristicas do sistema. 
+Esse algoritmo é composto de 2 fases. A primeira é o que chamamos em aprendizado de máquina de fase de treinamento. É realizado a coleta de dados e a extração das características que são pertinentes, além do treinamento de um modelo de árvore de decisão. Na figura \ref{fig:decision_tree} podemos ver o modelo de árvore de decisão gerado.  Esse modelo de árvore de decisão é capaz de reconhecer atividades como andar, correr, estado estático ou um evento de queda através das variáveis \textit{Std\_x}, \textit{Mean\_y} e \textit{Slope} que representam caracteristicas do sistema. 
 
 
 \begin{figure}[ht]
@@ -87,17 +87,19 @@ Este algoritmo é composto de 2 fases, a primeira é o que chamamos em aprendiza
 \end{figure} 
 
 
-Na segunda fase, chamada de fase de testes, o modelo de árvore de decisão é utilizado em uma aplicação no smartphone que será responsável pelo reconhecimento de atividades. Os dados dos sensores são catalogados e transformados nas características do sistema, que serviram como dados de entrada da árvore de decisão, que terá como saída o tipo de atividade que foi desempenhada.
+Na segunda fase, chamada de fase de testes, o modelo de árvore de decisão é utilizado em uma aplicação no smartphone que será responsável pelo reconhecimento de atividades. Os dados dos sensores são catalogados e transformados nas características do sistema, que servirão como dados de entrada da árvore de decisão, que terá como saída o tipo de atividade que foi desempenhada.
 
-Sistemas que utilizam reconhecimento de padrões, normalmente está suscetível a altos custos computacionais, análise massiva de dados, e acesso a grandes bancos de dados ou longos períodos de treinamentos onde o algoritmo de classificação precisa ser parametrizado e adaptado a diferentes grupos de usuários \citep{casilari2015analysis}. Em contraste, existem os algoritmos baseados em limiares que tendem a ser mais simples e similarmente eficientes, desde que encontremos limiares adequados.
+Sistemas que utilizam reconhecimento de padrões normalmente adotam algoritmos que exigem um custo computacional maior que um algoritmo baseado em limiares. Isto pode variar dependendo do algoritmo e da estratégia adotada. Por exemplo, caso o sistema realize a etapa de treinamento de maneira off-line, como visto no trabalho proposto por \cite{zhao2012fallalarm}, o custo computacional tende a ser muito menor do que um sistema que realiza está etapa em tempo real. 
+
+Apesar de não ter um custo computacional muito alto e nem exigir uma análise massiva de dados, o sistema proposto por \cite{zhao2012fallalarm} obteve um valor de Sensibilidade (proporção de eventos de queda corretamente identificados) de 75\%. Valor relativamente baixo comparado com diversos algoritmos baseados em limiares que chegam a 95\% de Sensibilidade, como pode ser visto na Seção \ref{sec:FDS_examples}. Os algoritmos baseados em limiares tendem a ser mais simples e similarmente eficientes, desde que encontremos limiares adequados.
 
 \subsection{Baseado em Limiares}
 Algoritmos baseados em limiares utilizados na detecção de quedas comparam os dados dos sensores com um ou mais valores pré-definidos, chamados de limiares. Estes valores podem ser fixos ou adaptados. Quando estes valores são adaptados, eles não mudam dinamicamente enquanto os usuários estão utilizando o sistema. Em vez disso, o usuário irá introduzir dados sobre o seu perfil fisiológico e o sistema irá informar os limiares adequados \citep{habib2014smartphone}. Um exemplo deste tipo de sistema pode ser visto em \cite{sposaro2009ifall}, o valor limiar mudar de acordo com os parâmetros providos pelo usuário como altura, peso e nível de atividade.
 
-De acordo com a revisão sistemática feita por \cite{casilari2015analysis}, muitos sistemas de detecção de queda utilizam o valor de \ac{SMV} do vetor de aceleração como  valor limiar principal em seus algoritmos de detecção. De acordo com \cite{casilari2015analysis}, o valor de \ac{SMV} é definido através da equação em \ref{eq:SMV}, onde $X_i$, $Y_i$, $Z_i$, representam, respectivamente, os valores de aceleração dos eixos x, y, z obtidos através do acelerômetro.
+De acordo com a revisão sistemática feita por \cite{casilari2015analysis}, muitos sistemas de detecção de queda utilizam o valor da \ac{SMV} do vetor de aceleração como  valor limiar principal em seus algoritmos de detecção. De acordo com \cite{casilari2015analysis}, o valor de \ac{SMV} é definido através da equação em \ref{eq:SMV}, onde $X_i$, $Y_i$, $Z_i$, representam, respectivamente, os valores de aceleração dos eixos x, y, z obtidos através do acelerômetro.
 
 \begin{equation}
-SMV = \sqrt{X_i^2 + Y_i^2 + Zi_i^2} 
+SMV = \sqrt{X_i^2 + Y_i^2 + Z_i^2} 
 \label{eq:SMV}
 \end{equation}
 
@@ -152,6 +154,7 @@ O \textit{F2D}, além de realizar a detecção de quedas, utiliza dados do conte
 
 
 \subsection{Sistema de Detecção de Quedas de Pulso}
+\label{subsec:hsieh}
 O sistema proposto por \cite{hsieh2014wrist} utiliza dois dispositivos vestíveis acoplados no pulso do usuário como pode ser visto na Figura \ref{fig:wrist_worn}. 
 
 
@@ -168,10 +171,15 @@ Cada um dos dispositivos está equipado com um módulo Zigbee\footnote{http://ww
 
 O algoritmo proposto utiliza ambos os dados do acelerômetro e do giroscópio para realizar a detecção de quedas. Os dados do giróscopio funcionam como um filtro inicial, desconsiderando a maioria das ativididades cotidianas, enquanto os dados do acelerômetro são responsáveis por realizar o julgamento final. O algoritmo utilizado, assim como os demais, é baseado em limiares onde os limiares foram definidos atravês de um treinamento inicial. 
 
-O algoritmo proposto é capaz de diferenciar \ac{AD} como bater palmas e deitar-se, de um evento de queda em 95\% dos casos. A principal desvantagem do sistema proposto é a necessidade de se utilizar 2 dispositivos, podendo torna-se desconfortável para o usuário.
+O algoritmo proposto é capaz de diferenciar \ac{AD}, como bater palmas e deitar-se, de um evento de queda em 95\% dos casos. A principal desvantagem do sistema proposto é a necessidade de se utilizar 2 dispositivos, podendo tornar-se desconfortável para o usuário.
 
-O sistema de detecção de pulso, assim como o \textit{Speedy}, utiliza de um dispositivo próprio para realizar a detecção, o que faz com sua adesão seja mais complexa. Além disso, para realizar a detecção o sistema necessita que o usuário utilize 2 relógios, o que pode ser incômodo para o usuário final. Por fim, ele necessita dos dados do giroscópio além do acelerômetro, o que pode exigir um maior custo computacional e consequentemente um maior consumo de bateria. 
+O sistema de detecção de pulso, assim como o \textit{Speedy}, utiliza  um dispositivo próprio para realizar a detecção, o que faz com sua adesão seja mais complexa. Além disso, para realizar a detecção o sistema necessita que o usuário utilize 2 relógios, o que pode ser incômodo para o usuário final. Por fim, ele necessita dos dados do giroscópio além do acelerômetro, o que pode exigir um maior custo computacional e consequentemente um maior consumo de bateria. 
 
+
+\section{Sumário}
+Neste capitulo apresentamos os principais sensores utilizados em \ac{SDQ} embarcados em dispositivos vestíveis. Discutimos questões de posicionamento dos sensores e os principais tipos de algoritmos utilizados para realizar a detecção de quedas. Por fim, foi feito uma análise de três trabalhos relacionados.
+
+No próximo capítulo apresentaremos o SafeWatch, a solução proposta neste trabalho capaz de realizar a detecção automatizada de quedas utilizando somente um smartwatch e os dados do acelerômetro. 
 
 
 

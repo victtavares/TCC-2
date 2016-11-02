@@ -1,27 +1,41 @@
 \chapter{SafeWatch: Sistema de Detecção de Quedas}
 \label{cap:safeWatch}
 
-Neste trabalho, apresentamos o SafeWatch, uma solução integrada entre smartphone e smartwatch, onde quedas são detectadas de maneira automatizada, e se necessário, os contatos de emergência do idoso são informados de sua localização para que possa prestar socorro de forma mais rápida possível. 
+Neste trabalho, apresentamos o SafeWatch, uma solução integrada entre smartphone e smartwatch, onde quedas são detectadas de maneira automatizada através de um algoritmo de detecção baseado em limiares. Quando necessário, os contatos de emergência do idoso são informados de sua localização para que possa prestar socorro de forma mais rápida possível. 
 
-
-As seções desse capítulo são organizadas da seguinte maneira: A Seção \ref{sec:architecture} mostra a arquitetura que foi definida e utilizada pela ferramenta construída; A Seção \ref{sec:tools} mostra as ferramentas que foram utilizadas para auxiliar à construção do SafeWatch; A Seção \ref{sec:implementation} descreve detalhes da implementação do SafeWatch; Por fim, a seção \ref{sec:screens} ilustra a execução da ferramenta.
+As seções desse capítulo são organizadas da seguinte maneira: A Seção \ref{sec:architecture} mostra a arquitetura que foi definida e utilizada pela ferramenta construída; A Seção \ref{sec:tools} mostra as ferramentas que foram utilizadas para auxiliar à construção do SafeWatch; Já a Seção \ref{sec:implementation} descreve detalhes da implementação do SafeWatch.
 
 
 
 \section{Arquitetura}
 \label{sec:architecture}
 
-De acordo com \cite{garlan1993introduction}, a arquitetura de um software define o sistema em termos de componentes e as interações existentes entre esses componentes. Em outras palavras, a arquitetura de software tem o objetivo de mostrar uma visão completa do sistema. 
+De acordo com \cite{garlan1993introduction}, a arquitetura de um software define o sistema em termos de componentes e as interações existentes entre esses componentes. Em outras palavras, a arquitetura de software tem o objetivo de mostrar uma visão geral do sistema. 
 
-O SafeWatch foi desenvolvido para funcionar como um aplicativo Android Wear\footnote{https://www.android.com/wear/} para smartwatches que funciona em conjunto com o smartphone Android do usuário, através de uma aplicação homônima, que está sincronizado com o mesmo. A ferramenta foi desenvolvida com base em uma arquitetura pré-definida e possui os seus módulos desacoplados para facilitar futuras mudanças ou melhorias. A ferramenta está dividida em 5 módulos como ilustra a Figura \ref{fig:architecture}.
+O SafeWatch foi desenvolvido para funcionar como um aplicativo Android Wear\footnote{https://www.android.com/wear/} para smartwatches que funciona em conjunto com o smartphone Android do usuário, através de uma aplicação homônima, que está sincronizada com o mesmo.
+
+De forma geral, a aplicação smartwatch irá monitorar as atividades do usuário através do acelerômetro e no momento em que uma queda for detectada emitirá um alerta vibratório juntamente com um sinal para o smartphone. No smartphone está presente uma aplicação de gerenciamento geral do sistema, onde o usuário é capaz de adicionar, visualizar e remover os contatos de emergência que seriam notificados no momento de uma queda. Na ocorrência de uma queda o sistema irá se comportar como pode ser visto na Figura \ref{fig:diagram}.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[scale=0.65]{imagens/architecture.png}
-	\caption{ Arquitetura do SafeWatch. Figura Elaborada pelo autor (2016).}
-	\label{fig:architecture}
-\end{figure} 
+	\includegraphics[scale=0.5]{imagens/DiagramaQueda.png}
+	\caption{Aplicação no evento de queda. Figura Elaborada pelo autor (2016).}
+	\label{fig:diagram}
+\end{figure}
 
+
+
+Assim que um evento de queda é detectado, o smartwatch irá emitir um sinal de vibração por um tempo determinado, e caso o usuário não informe o contrário, um email contendo a localização do usuário que está utilizando o smartwatch é enviado para os seus contatos de emergência previamente cadastrados.
+
+O SafeWatch foi desenvolvido com base em uma arquitetura pré-definida e possui os seus módulos desacoplados para facilitar futuras mudanças ou melhorias. Na Figura \ref{fig:architecture} é possível ver o fluxo de dados dos cinco módulos presentes no SafeWatch. O fluxo começa com a obtenção dos dados do acelerômetro e termina com envio da mensagem de emergência. As setas na imagem representam o sentido do fluxo dos dados. Os módulos utilizados são os seguintes:
+
+
+ \begin{figure}
+ 	\centering
+ 	\includegraphics[scale=0.65]{imagens/architecture.png}
+ 	\caption{ Fluxo de Dados do SafeWatch. Figura Elaborada pelo autor (2016).}
+ 	\label{fig:architecture}
+ \end{figure} 
 
 
 \begin{enumerate}
@@ -29,7 +43,7 @@ O SafeWatch foi desenvolvido para funcionar como um aplicativo Android Wear\foot
 	
 	\item{\textbf{Fall Detector}: Recebe informações provindas do \textit{Sensor Reader} para através do algoritmo de detecção de quedas categorizar um determinado evento como queda ou não.}
 	
-	\item{\textbf{Watch Communicator}: Realiza a comunicação entre o smartwatch e o smartphone do usuário. Irá receber dados do smartwatch que são tratados pela módulo chamado de \textit{Fall Handler}.}
+	\item{\textbf{Watch Communicator}: Realiza a comunicação entre o smartwatch e o smartphone do usuário. Irá receber dados do smartwatch que são tratados pelo módulo chamado de \textit{Fall Handler}.}
 	
 	\item{\textbf{Fall Handler}: Será responsável pelas ações do smartphone após um evento de queda, como o envio de emails e o gerenciamento dos dados do acelerômetro recebidos do smartwatch.}
 	
@@ -39,14 +53,16 @@ O SafeWatch foi desenvolvido para funcionar como um aplicativo Android Wear\foot
 
 Os módulos \textit{Sensor Reader} e \textit{Fall Detector} estão presentes na aplicação embarcada no smartwatch, os demais módulos estão presentes na aplicação para smartphones. 
 
+
+
 \section{Ferramentas Utilizadas}
 \label{sec:tools}
 Durante o desenvolvimento do \textit{SafeWatch} foram utilizadas diversas ferramentas que serviram para dar suporte a sua implementação e execução. Tanto o aplicativo para smartphones, quanto o aplicativo embarcado no smartwatch foram desenvolvidos utilizando o Android Studio\footnote{https://developer.android.com/studio/}. O Android Studio é a \ac{IDE} oficial do Google no desenvolvimento de aplicações móveis ou vestíveis.
 
 
-Nas classes do projeto relacionadas às telas do aplicativo foi utilizado o ButterKnife\footnote{texthttps://github.com/JakeWharton/butterknife}. O Butterknife é responsável por fazer a ligação entre os arquivos responsáveis pela criação das telas, e as classes que utilizam os componentes visuais destas telas. 
+Nas classes do projeto relacionadas às telas do aplicativo foi utilizado o ButterKnife\footnote{texthttps://github.com/JakeWharton/butterknife}. O ButterKnife é responsável por fazer a ligação entre os arquivos responsáveis pela criação das telas, e as classes que utilizam os componentes visuais destas telas. 
 
-Para realizar os cálculos do desvio padrão foi utilizada a biblioteca do Apache chamada Commons-Math\footnote{http://commons.apache.org/proper/commons-math/}. Esta biblioteca contém um conjunto de funções matemáticas e de estatística não presentes na biblioteca padrão do JAVA. 
+Para realizar os cálculos do desvio-padrão foi utilizada a biblioteca do Apache chamada Commons-Math\footnote{http://commons.apache.org/proper/commons-math/}. Esta biblioteca contém um conjunto de funções matemáticas e de estatística não presentes na biblioteca padrão do JAVA. 
 
 Para que possamos enviar os dados do acelerômetro do smartwatch para o smartphone, eles precisam estar codificados em algum padrão, o padrão escolhido foi o JSON. O JSON é um formato de dados utilizado para comunicação entre dispositivos \citep{JSON16}. Para que possamos fazer a codificação e decodificação dos dados do acelerômetro foi utilizada a biblioteca chamada Gson\footnote{http://www.json.org/}.
 
@@ -64,19 +80,23 @@ A implementação do SafeWatch foi dividida em várias partes, onde cada uma del
 \subsection{Sensor Reader}
 O módulo \textit{Sensor Reader} é responsável pela configuração e gerenciamento do acelerômetro. Aqui, o acelerômetro é configurado para atualizar seus dados a uma frequência de 50 $Hz$, ou seja, a cada 20 ms. Os dados do acelerômetro são coletados a todo momento, mesmo quando a aplicação não está em primeiro plano.
 
-Este módulo também será responsável por armazenar os dados do acelerômetro nos últimos 0.4 segundos para posterior uso no algoritmo de detecção, caso necessário. Tanto a escolha da frequência de 50 $Hz$ quanto o tempo de 0.4 segundos para o armazenamento de dados do acelerômetro serão explicados com mais detalhes na Seção \ref{subsec:fall_detector}.
-
+Este módulo também será responsável por armazenar os dados do acelerômetro nos últimos 0.4 segundos para posterior uso no algoritmo de detecção, caso necessário. Tanto a escolha da frequência de 50 $Hz$ quanto o tempo de 0.4 segundos para o armazenamento de dados do acelerômetro serão explicados com mais detalhes na Seção \ref{subsec:fall_detector}. 
 
 
 \subsection{Fall Detector}
 \label{subsec:fall_detector}
-O módulo \textit{Fall Detector} encapsula o algoritmo de detecção de quedas baseado em limiares utilizado pelo SafeWatch. Este é o módulo mais complexo da aplicação, pois nele se encontra a lógica responsável por decidir, através dos dados obtidos do acelerômetro, se um evento de queda ocorreu ou não. O algoritmo proposto é uma adaptação do algoritmo desenvolvido por \cite{hsieh2014wrist}. O algoritmo proposto neste trabalho se diferencia do algoritmo proposto em \cite{hsieh2014wrist} pela não utilização do giroscópio como sensor auxiliar, acredita-se que sem o uso do giroscópio é possível obter-se resultados satisfatórios como visto na Seção \ref{subsec:F2D_System}. 
+O módulo \textit{Fall Detector} encapsula o algoritmo de detecção de quedas baseado em limiares utilizado pelo SafeWatch. Este é o módulo mais complexo da aplicação, pois nele se encontra a lógica responsável por decidir, através dos dados obtidos do acelerômetro, se um evento de queda ocorreu ou não. O algoritmo proposto é uma adaptação do algoritmo desenvolvido por \cite{hsieh2014wrist}. 
 
-Um grande desafio quando utilizamos um algoritmo baseado em limiares é a definição dos valores dos limiares. Caso este valor seja muito alto, o sistema irá deixar escapar alguns eventos de queda, mas não irá categorizar uma \ac{SDQ} como uma queda.  Do outro lado, se este valor for muito baixo, o sistema irá detectar todos os eventos de queda, mas algumas \ac{SDQ} pode ser categorizadas como eventos de queda de maneira equivocada. De acordo com o treinamento inicial realizado por \cite{hsieh2014wrist}, o valor de \ac{SMV}, representado pela fórmula \ref{eq:SMV}, será maior que $6G$, onde $G \approx 9.8 m/s^2$,  no momento do impacto em um evento de queda. 
+O algoritmo proposto neste trabalho se diferencia do algoritmo proposto em \cite{hsieh2014wrist} pela não utilização do giroscópio como sensor auxiliar, pois acredita-se que sem o uso desse sensor é possível obter-se resultados satisfatórios, como visto na Seção \ref{subsec:hsieh}, reduzindo o custo de bateria. O giroscópio é usado por \cite{hsieh2014wrist} para aumentar o valor de \textit{Especificidade} do sistema proposto. Ele é utilizado como o primeiro passo no algoritmo baseado em limiares utilizado por ele. Nos experimentos realizados por \cite{hsieh2014wrist}, a velocidade angular obtida através do giroscópio possui valores maiores que 350º/s em um evento de queda. 
 
-Também foi identificado por \cite{hsieh2014wrist}, que caso o valor de aceleração atinja o valor de $6G$, o valor do desvio padrão ficava com valores em torno de $1.07G$  em movimentos regulares do braço realizados 0.4 segundos antes ou depois deste pico de aceleração.Entretanto, em eventos de queda, este valor estava mais próximo de $1.69G$. 
+De acordo com um estudo feito por \cite{casilari2015analysis}, o número de sensores utilizados afeta diretamente a duração da bateria. Em um experimento realizado por \cite{mellone2012smartphone} utilizando um smartphone Samsung Galaxy S II, a duração da bateria aumentou de 16 para 30 horas ao utilizar somente um sensor (acelerômetro) em vez de três sensores (acelerômetro, magnetômetro, giroscópio). Além disso, o SafeWatch só utiliza um smartwatch, enquanto o sistema proposto por \cite{hsieh2014wrist} necessita de dois dispositivos de pulso similares a um smartwatch. 
 
-Por fim, o período de inatividade posterior a uma queda foi analisado. De acordo com \cite{hsieh2014wrist}, o valor da \ac{SMA}, expresso através da Equação \ref{eq:SMA}, tem uma relação diretamente proporcional com o nível de movimentação de um corpo. Foi identificado que em eventos de queda, o indíviduo tende a ficar parado por pelo menos 2 segundos, com valores de SMA inferiores a $200G$. É importante ressaltar que este valor de $200G$ é encontrado quando a frequência do acelerômetro é de 50 $Hz$.Caso contrário, o número de amostras coletados será diferente, afetando diretamente no valor de $SMA$. 
+Um grande desafio quando utilizamos um algoritmo baseado em limiares é a definição dos valores dos limiares. Caso esse valor seja muito alto, o sistema irá deixar escapar alguns eventos de queda, mas não irá categorizar uma \ac{AD} como uma queda.  Do outro lado, se esse valor for muito baixo, o sistema irá detectar todos os eventos de queda, mas algumas \ac{AD} pode ser categorizadas como eventos de queda de maneira equivocada. De acordo com o treinamento inicial realizado por \cite{hsieh2014wrist}, o valor de \ac{SMV}, representado pela fórmula \ref{eq:SMV}, será maior que $6G$, onde $G \approx 9.8 m/s^2$,  no momento do impacto em um evento de queda. 
+
+Também foi identificado por \cite{hsieh2014wrist}, que caso o valor de aceleração atinja o valor de $6G$, o valor do desvio padrão ficava com valores em torno de $1.07G$  em movimentos regulares do braço realizados 0.4 segundos antes e depois deste pico de aceleração.Entretanto, em eventos de queda, este valor estava mais próximo de $1.69G$. 
+
+Por fim, o período de inatividade posterior a uma queda foi analisado. De acordo com \cite{hsieh2014wrist}, o valor da \ac{SMA}, expresso através da Equação \ref{eq:SMA}, tem uma relação diretamente proporcional com o nível de movimentação de um corpo. Foi identificado que em eventos de queda, o indíviduo tende a ficar parado por pelo menos 2 segundos, com valores de SMA inferiores a $200G$. É importante ressaltar que este valor de $200G$ é encontrado quando a frequência do acelerômetro é de 50 $Hz$, ou seja, a cada $20 ms$ um novo valor do acelerômetro é coletado. Caso
+está frequencia seja diferente, o número de amostra coletados será afetado, fazendo com que o valor de $SMA$ seja diferente de $200G$ em um periodo de inatividade.
 
 \begin{equation}
 SMA = \sum_{i=1}^{N} (\mid X_i\mid + \mid Y_i \mid + \mid Zi_i \mid)
@@ -98,248 +118,56 @@ Nesta equação $X_i$, $Y_i$, $Z_i$, são os valores da aceleração no tempo $i
 		\item O valor de $SMA$ é calculado, e caso este valor seja menor do que $ 200G $ finalmente confirmamos que um evento de queda ocorreu.
 	\end{enumerate}
 
- Caso um evento de queda seja detectado, o relógio irá vibrar por 15 segundos, na espera de um feedback do usuário informando se ele está bem ou não. O tempo de 15 segundos foi escolhido, pois o usuário terá tempo de dar um feedback para o sistema caso ele não esteja em uma situação de perigo. Da mesma forma, o tempo de 15 segundos não irá atrasar o envio da mensagem de emergência quando o usuário realmente precisar.  
  
- O código fonte em \ref{cod:java} , representa o algoritmo utilizado para realizar a detecção de quedas implementado utilizado a linguagem de programação \textit{JAVA}. 
  
- \begin{lstlisting}[caption=Algoritmo de Detecção de Quedas em Java, label=cod:java, language=JAVA, frame=single, breaklines=true]
-package com.victortavares.safewatch.Models;
+ Na figura \ref{fig:smartwatch_screen}, é possível ver os momento em que o sistema realiza a leitura de dados do acelerômetro, demonstrado pela tela da esquerda. Esta leitura é feita de maneira constante, mas não afeta o funcionamento das demais funções do smartwatch. 
+ 
 
-import android.content.Context;
-import android.os.Handler;
-import android.util.Log;
-
-import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
-
-import java.util.ArrayList;
-import java.util.List;
-
-/**
-* Created by Victor Tavares on 7/14/16.
-*/
-public class FallDetector implements SensorCommunicator {
-
-private AccelerometerReader accelerometerReader;
-private static final String TAG = "FALL_DETECTOR";
-private Boolean detectingFall = false;
-
-//gravity Constants
-private static float gravity = 9.81f;
-private static float gravity6G = gravity *6f;
-private static float gravity1AndHalfG = gravity * 1.5f;
-private static float gravity200G = gravity *200f;
-
-
-private static FallDetectorCommunicator fallObserver;
-
-
-public FallDetector(FallDetectorCommunicator fallObserver) {
-accelerometerReader = new AccelerometerReader(this);
-this.fallObserver = fallObserver;
-}
-
-public void startMonitoring(Context  c) {
-accelerometerReader.startMonitoring(c);
-}
-
-
-public void accelerometerAboveLimit(SensorBase accelerometerMeasurement) {
-
-if (detectingFall) return;
-
-Log.i(TAG, "Possible Fall. accelerometerData: " + accelerometerMeasurement.getSpeed()/gravity + " at " + accelerometerMeasurement.getDate() + " on " + accelerometerMeasurement.getTimestamp());
-analyseData(accelerometerMeasurement.getTimestamp());
-}
-
-
-private  void analyseData(final long timeOfOcurrence) {
-detectingFall = true;
-accelerometerReader.setTriggered(true);
-
-
-Handler handler = new Handler();
-handler.postDelayed(new Runnable() {
-
-@Override
-public void run() {
-SensorBase maxSpeedGatheringAfter4Seconds = new SensorBase(0f,0f,0f, (long) 0);
-DescriptiveStatistics statsCalculation = new DescriptiveStatistics();
-Float SMAAfter2Seconds = 0f;
-
-
-//checking 4 seconds after the accelerometer indicator
-for (SensorBase currentSensor : accelerometerReader.getlTrigerredAccelerometerData()) {
-float timeBetweenFallAndDetection = (currentSensor.getTimestamp() - timeOfOcurrence);
-//Log.i(TAG, "Collecting max speed:" + currentSensor.getSpeed() + " at " + currentSensor.getDate() + " on " + currentSensor.getTimestamp() );
-//getting the max value of occurrence 4 seconds after the fall
-if (timeBetweenFallAndDetection <= 400 && currentSensor.getSpeed() > maxSpeedGatheringAfter4Seconds.getSpeed()) {
-maxSpeedGatheringAfter4Seconds = currentSensor;
-}
-}
-
-
-//Log.i(TAG, "-------------------------\n");
-
-//getting 4 seconds before and after the max value of speed.
-List<SensorBase> combinedValues = accelerometerReader.getlDefaultAccelerometerData();
-combinedValues.addAll(accelerometerReader.getlTrigerredAccelerometerData());
-//Log.i(TAG, "value of pick:" + maxSpeedGatheringAfter4Seconds.getSpeed()/gravity + " at " + maxSpeedGatheringAfter4Seconds.getDate() + " on " + maxSpeedGatheringAfter4Seconds.getTimestamp());
-for (SensorBase currentSensor : combinedValues) {
-
-float timeBetweenPickAndCurrentSensor = currentSensor.getTimestamp() - maxSpeedGatheringAfter4Seconds.getTimestamp();
-
-if (timeBetweenPickAndCurrentSensor >= -400 && timeBetweenPickAndCurrentSensor <= 400) {
-//Log.i(TAG, "Adding value to stats calculation:" + currentSensor.getSpeed() + " at " + currentSensor.getDate() + " on " + currentSensor.getTimestamp() );
-statsCalculation.addValue(currentSensor.getSpeed());
-}
-}
-
-
-Log.i(TAG, "-------------------------\n");
-
-//getting 2 seconds after the max value of speed, ignoring the max value
-for (SensorBase currentSensor : accelerometerReader.getlTrigerredAccelerometerData()) {
-float timeBetweenPickAndCurrentSensor = currentSensor.getTimestamp() - maxSpeedGatheringAfter4Seconds.getTimestamp();
-
-if (timeBetweenPickAndCurrentSensor <= 2000 && timeBetweenPickAndCurrentSensor > 0) {
-//Log.i(TAG, "Adding value to SMA calculation:" + currentSensor.getSpeed() + " at " + currentSensor.getDate() + " on " + currentSensor.getTimestamp() );
-SMAAfter2Seconds += currentSensor.getSmaSum();
-}
-}
-
-
-//Log.i(TAG, "-------------------------\n");
-
-//Detection algorithm
-//checking 0.4 seconds after the gathering is bigger than 6G
-if (maxSpeedGatheringAfter4Seconds.getSpeed() > gravity6G) {
-Log.i(TAG, "Fall detected on maxValue:" + (maxSpeedGatheringAfter4Seconds.getSpeed()/gravity) + "G");
-} else {
-Log.i(TAG, "Not Fall(maxValue4Seconds):" + (maxSpeedGatheringAfter4Seconds.getSpeed()/gravity) + "G");
-finishDataAnalysis();
-return;
-}
-
-
-//standard deviation 0.4 seconds before and after the  maxSpeedGatheringAfter4Seconds is higher than 1.5G
-Double standardDeviation = statsCalculation.getStandardDeviation();
-if (standardDeviation > gravity1AndHalfG) {
-Log.i(TAG, "Fall detected on standard deviation:" + (standardDeviation/gravity) + "G");
-} else {
-Log.i(TAG, "Not Fall (standardDeviation): " + (standardDeviation/gravity) + "G");
-finishDataAnalysis();
-return;
-}
-
-//SMA value above 2 seconds is below 200G
-if (SMAAfter2Seconds < gravity200G) {
-Log.i(TAG, "Fall detected on SMA:" + (SMAAfter2Seconds/gravity) + "G");
-} else {
-Log.i(TAG, "Not Fall detected on SMA:" + (SMAAfter2Seconds/gravity) + "G");
-finishDataAnalysis();
-return;
-
-}
-
-fallObserver.fallDetected(combinedValues);
-finishDataAnalysis();
-}
-
-
-}, 2400);
-
-}
-
-private void finishDataAnalysis() {
-accelerometerReader.setTriggered(false);
-detectingFall = false;
-}
-
-}
-
- \end{lstlisting}
+ 
+ \begin{figure}[ht]
+ 	\centering
+ 	\includegraphics[scale=0.3]{imagens/smartwatch.png}
+ 	\caption{Na ordem, telas de monitoramento e detecção de quedas. Figura Elaborada pelo autor (2016).}
+ 	\label{fig:smartwatch_screen}
+ \end{figure}
+ 
+ O código fonte no apêndice \ref{ap:algorithm} representa o algoritmo utilizado para realizar a detecção de quedas implementado utilizado a linguagem de programação \textit{JAVA}. 
 
 \subsection{Watch Communicator}
 O módulo \textit{Watch Communicator} é responsável pela comunicação entre o smartwatch e o smartphone do usuário. Fisicamente, esta comunicação é realizada via bluetooth, já a nível de software, está comunicação é realizada através do que chamamos na arquitetura Android de \textit{Services}.
 
 No Android, um \textit{Service} é um componente da aplicação capaz de realizar operações de longa duração em segundo plano \cite{servicesAndroidDocs}. No SafeWatch, os \textit{Services} recebem os dados do acelerômetro referentes ao evento de queda, ou seja, todos os registros do acelerômetro 0.4 segundos antes do pico de aceleração, até 2 segundos depois deste valor. Além disso, também é enviado, uma variável booleana indicando se deve-se ou não enviar um e-mail para a lista de contatos de emergência do usuário. Os emails de emergência são enviados para a lista de contato do usuário 15 segundos após um evento de queda, ou antes disso, caso o usuário confirme que precisa de ajuda. 
 
-Para que os contatos da lista de emergência não sejam incomodados desnecessariamente na ocorrência de falsas detecções de quedas, o usuário poderá cancelar o envio dos emails de emergência, dentro de 15 segundos após um evento de queda, caso ele informe que está bem.
+Para que os contatos da lista de emergência não sejam incomodados desnecessariamente na ocorrência de falsas detecções de quedas, o usuário poderá cancelar o envio dos emails de emergência, dentro de 15 segundos após um evento de queda, caso ele informe que está bem. O tempo de 15 segundos foi escolhido, pois o usuário terá tempo de dar um feedback para o sistema, caso ele não esteja em uma situação de perigo. Da mesma forma, este tempo não irá atrasar o envio da mensagem de emergência quando o usuário realmente precisar. Podemos ver a tela que aparecerá para o usuário em um evento de queda a direita na Figura \ref{fig:smartwatch_screen}. 
+
+
 
 \subsection{Fall Handler} 
-Este módulo é responsável pelo envio de e-mails e a manipulação de arquivos com os dados de uma queda. Para que se possa realizar o envio de e-mails, foi criado um email padrão do SafeWatch. O envio de e-mail é feito de forma assíncrona, sem bloquear a interação do usuário com a aplicação. 
+Este módulo é responsável pelo envio de e-mails e a manipulação de arquivos com os dados de uma queda. Para que se possa realizar o envio de e-mails, foi criado um email padrão do SafeWatch. O envio de e-mail é feito de forma assíncrona, sem bloquear a interação do usuário com a aplicação. O modelo do email pode ser visto na figura \ref{fig:mail_template}. Além de uma mensagem informando que o usuário pode está em uma situação de perigo, um link do \textit{Google Maps}\footnote{https://www.google.com/maps} é anexado com a última localização do usuário obtida pelo sistema.
 
-Os dados referentes a um evento de queda são salvos na raiz do sistema de arquivos do smartphone android na pasta \textit{/SafeWatch/smartwatch}. O arquivo é nomeado com o padrão \textit{experimentData\_timeStamp}, onde t\textit{timeStamp} representa o momento do salvamento do arquivo, em milisegundos. O arquivo está salvo no formato \textit{CSV}, com os valores de aceleração nos eixos x,y,z, o valor de \ac{SMV} correspondente ao registro e o tempo em milisegundos em que ele ocorreu. Apesar destes valores não serem úteis para o usuário final, eles poderão servir para uma possível replica dos experimentos realizados. 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.7]{imagens/mail_example.png}
+	\caption{ Modelo de email enviado no evento de queda. Figura Elaborada pelo autor (2016).}
+	\label{fig:mail_template}
+\end{figure}
+
+
+Os dados referentes a um evento de queda são salvos na raiz do sistema de arquivos do smartphone android na pasta \textit{/SafeWatch/smartwatch}. O arquivo é nomeado com o padrão \textit{experimentData\_timeStamp}, onde t\textit{timeStamp} representa o momento do salvamento do arquivo, em milisegundos. O arquivo está salvo no formato \textit{CSV}, com os valores de aceleração nos eixos x,y,z, o valor de \ac{SMV} correspondente ao registro e o tempo em milisegundos em que ele ocorreu. Apesar destes valores não serem úteis para o usuário final, eles poderão servir para uma possível análise dos dados de queda e replica dos experimentos realizados. 
 
 \subsection{Contact Manager}
-Neste módulo, estão encapsuladas as ações de adição, remoção e listagem dos contatos de emergência do usuário. Além do e-mail, nas informações do contato também constará o nome completo do mesmo. 
-
-
-\section{Telas e Funcionamento}
-\label{sec:screens}
-O sistema foi desenvolvido de forma que o usuário necessite interagir o mínimo possível com os aplicativos tanto no smartphone quanto no smartwatch. 
-
-De forma geral, a aplicação smartwatch irá monitorar as atividades do usuário através do acelerômetro e no momento em que uma queda for detectada emitirá um alerta vibratório juntamente com um sinal para o smartphone. No smartphone está presente uma aplicação de gerenciamento geral do sistema, nesta aplicação o usuário será capaz de adicionar, visualizar e remover os contatos de emergência que seriam notificados no momento de uma queda.
-
-Inicialmente, o usuário deve realizar o cadastro dos contatos de emergência, a tela de cadastro pode ser vista na figura \ref{fig:add_contact}. O usuário necessita informar o nome completo e email do contato desejado. Todos os contatos de emergência do usuário podem ser visualizados em forma de lista como pode ser visto na Figura \ref{fig:list_contacts}.
-
-
-Depois de adicionar os contatos de emergência, o usuário não necessita realizar mais nenhum tipo de cadastro ou configuração no sistema. Na ocorrência de uma queda o sistema irá se comportar como pode ser visto na Figura \ref{fig:diagram}.
-
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.5]{imagens/DiagramaQueda.png}
-	\caption{Aplicação no evento de queda. Figura Elaborada pelo autor (2016).}
-	\label{fig:diagram}
-\end{figure}
-
-Enquanto um evento de queda não é detectado, o smartwatch irá realizar o monitoramento constante dos dados do acelerômetro, durante esta fase, o sistema irá mostrar uma mensagem, indicando que está realizando o monitoramento, como pode ser visto na figura \ref{fig:monitor_screen}.
-
-
-Na Figura \ref{fig:monitor_fall}, é possível ver o momento que um evento de queda é detectado. Neste momento, o smartwatch irá emitir um sinal de vibração, além de uma mensagem perguntando se está tudo bem com o usuário. Esta mensagem ficará visível por 15 segundos, caso o usuário não cancele o envio, uma mensagem é enviada para o smartphone informando que uma queda ocorreu.
-
-
-O smartphone irá enviar um email para o usuário. O modelo do email pode ser visto na figura \ref{fig:mail_template}. Além de uma mensagem informando que o usuário pode está em uma situação de perigo, um link do \textit{Google Maps}\footnote{https://www.google.com/maps} é anexado com a última localização do usuário obtida pelo sistema. 
-
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.3]{imagens/tela_adicionar_contatos.png}
-	\caption{Tela de adição de um contato de emergência. Figura Elaborada pelo autor (2016).}
-	\label{fig:add_contact}
-\end{figure} 
-
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.3]{imagens/tela_contatos.png}
-	\caption{Tela de visualização dos contatos de emergência. Figura Elaborada pelo autor (2016).}
-	\label{fig:list_contacts}
-\end{figure}
-
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.12]{imagens/screen_fall.png}
-	\caption{ Tela apresentada quando uma queda é detectada. Figura Elaborada pelo autor (2016).}
-	\label{fig:monitor_fall}
-\end{figure}
-
+Neste módulo, estão encapsuladas as ações de adição, remoção e listagem dos contatos de emergência do usuário. O cadastro dos contatos de emergência deve ser a primeira ação do usuário no primeiro contato com a aplicação. A tela de cadastro e visualização dos contatos de emergência do usuário podem ser vistos na Figura \ref{fig:contacts}. Depois de adicionar os contatos de emergência, o usuário não necessita realizar mais nenhum tipo de cadastro ou configuração no sistema.
 
 
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.1]{imagens/screen_monitor.png}
-	\caption{ Tela de monitoramento presente no smartwatch. Figura Elaborada pelo autor (2016).}
-	\label{fig:monitor_screen}
+	\includegraphics[scale=0.4]{imagens/add_list_contacts.png}
+	\caption{Na ordem, telas de listagem e adição de contatos de emergência. Figura Elaborada pelo autor (2016).}
+	\label{fig:contacts}
 \end{figure}
 
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.6]{imagens/mail_example.png}
-	\caption{ Modelo de email enviado no evento de queda. Figura Elaborada pelo autor (2016).}
-	\label{fig:mail_template}
-\end{figure}
+\section{Sumário}
+Neste capítulo foi apresentado uma visão geral do funcionamento do SafeWatch e as principais questões envolvidas no desenvolvimento deste trabalho. Foi descrito em detalhes o algoritmo de detecção de quedas utilizado e as telas presentes nesse sistema.  No próximo capítulo serão descritos detalhes do experimento e as métricas utilizadas na avaliação do SafeWatch. 
+
 
